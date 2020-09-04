@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import data from './sample.json'
 function App() {
   return (
     <div className="App">
@@ -10,6 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <button onClick = {() => console.log(JSON.parse(data[0]))}>TestData</button>
         <a
           className="App-link"
           href="https://reactjs.org"
