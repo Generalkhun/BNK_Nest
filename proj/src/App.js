@@ -7,7 +7,7 @@ import { ShapeFile } from "react-leaflet-shapefile"
 function App() {
 
   return (
-    ß
+    
 
     <Map center={[13.7133, 100.5010]} zoom={11}>
       <TileLayer
