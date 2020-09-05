@@ -2,20 +2,12 @@ import React from "react";
 import logo from "./logo.svg";
 import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import "./App.css";
-import Page2 from "./Page2";
 import data from "./sample.json";
-
+import Page3 from "./Page3";
 function App() {
   return (
     <div>
-      <Page2 />
-      <button
-        onClick={() => {
-          console.log(data);
-        }}
-      >
-        CheckData
-      </button>
+      <Page3 />
     </div>
   );
 }
