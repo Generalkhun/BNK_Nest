@@ -1,2 +1,0 @@
-# BNK_Nest
-BNKPROJ
