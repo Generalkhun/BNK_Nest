@@ -11,6 +11,7 @@ function App() {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
     </Map>
+
   );
 }
 
