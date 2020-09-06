@@ -17,9 +17,6 @@ function MapDistrict() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
-    
-
-      
 
       {districtShape.features.map((district) => {
         let thisPositionArray = district.geometry.coordinates[0];
@@ -40,18 +37,20 @@ function MapDistrict() {
               console.log(district.properties.dname);
               setDistrictSelected(district.properties.dname);
             }}
-            fillColor =  {(district.properties.dname === mouseOnDistrict) ? "Orange" : "Green"}
-            color = {(district.properties.dname === mouseOnDistrict) ? "White" : "Grey"}
-            weight = "1"
-            onMouseOver = {()=> {
-              console.log(mouseOnDistrict)
-              setmouseOnDistrict(district.properties.dname)
-              }}
+            fillColor={
+              district.properties.dname === mouseOnDistrict ? "Orange" : "Green"
+            }
+            color={
+              district.properties.dname === mouseOnDistrict ? "White" : "Grey"
+            }
+            weight="1"
+            onMouseOver={() => {
+              setmouseOnDistrict(district.properties.dname);
+            }}
           />
         );
       })}
     </Map>
-
   );
 }
 
