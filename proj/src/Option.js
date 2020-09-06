@@ -7,6 +7,9 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles((theme) => ({
+  font: {
+    fontFamily: `'Kanit', sans-serif`,
+  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 350,
@@ -28,25 +31,46 @@ export default function Option({ setFilter }) {
   return (
     <div>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+        <InputLabel className={classes.font} id="demo-simple-select-label">
+          Filter
+        </InputLabel>
         <Select
+          className={classes.font}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
           onChange={handleChange}
         >
-          <MenuItem value={1}>แผนงานบริหารงานปกครองและทะเบียน</MenuItem>
-          <MenuItem value={2}>แผนงานบริหารการคลัง</MenuItem>
-          <MenuItem value={3}>แผนงานรักษาความสะอาด</MenuItem>
-          <MenuItem value={4}>แผนงานรักษาความเป็นระเบียบเรียบร้อย</MenuItem>
-          <MenuItem value={5}>แผนงานการโยธา</MenuItem>
-          <MenuItem value={6}>
+          <MenuItem className={classes.font} value={1}>
+            แผนงานบริหารงานปกครองและทะเบียน
+          </MenuItem>
+          <MenuItem className={classes.font} value={2}>
+            แผนงานบริหารการคลัง
+          </MenuItem>
+          <MenuItem className={classes.font} value={3}>
+            แผนงานรักษาความสะอาด
+          </MenuItem>
+          <MenuItem className={classes.font} value={4}>
+            แผนงานรักษาความเป็นระเบียบเรียบร้อย
+          </MenuItem>
+          <MenuItem className={classes.font} value={5}>
+            แผนงานการโยธา
+          </MenuItem>
+          <MenuItem className={classes.font} value={6}>
             แผนงานจัดการระบายน้ าและแก้ไขปัญหาน้ าท่วม
           </MenuItem>
-          <MenuItem value={7}>แผนงานพัฒนาสภาวะสิ่งแวดล้อม</MenuItem>
-          <MenuItem value={8}>แผนงานพัฒนาชุมชน</MenuItem>
-          <MenuItem value={9}>แผนงานอนามัยสิ่งแวดล้อม</MenuItem>
-          <MenuItem value={10}>แผนงานบริหารการศึกษา</MenuItem>
+          <MenuItem className={classes.font} value={7}>
+            แผนงานพัฒนาสภาวะสิ่งแวดล้อม
+          </MenuItem>
+          <MenuItem className={classes.font} value={8}>
+            แผนงานพัฒนาชุมชน
+          </MenuItem>
+          <MenuItem className={classes.font} value={9}>
+            แผนงานอนามัยสิ่งแวดล้อม
+          </MenuItem>
+          <MenuItem className={classes.font} value={10}>
+            แผนงานบริหารการศึกษา
+          </MenuItem>
         </Select>
       </FormControl>
     </div>

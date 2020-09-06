@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import data from "./sample.json";
 import { dataToJSONObject } from "./util";
 import Option from "./Option";
+import { PieChart } from "react-minimal-pie-chart";
 function Page2() {
   // Declare a new state variable, which we'll call "count"
+
   const dataObject = dataToJSONObject(data);
 
   const [filter, setFilter] = useState(1);
 
   const index = 0;
   return (
-    <div>
+    <div style={{ fontFamily: `'Kanit', sans-serif` }}>
       <div>
         <h1>{dataObject[index].name}</h1>
         <button
@@ -37,15 +39,32 @@ function Page2() {
         }}
       >
         <div style={{ backgroundColor: "pink", gridArea: "main1" }}></div>
-        <div style={{ backgroundColor: "red", gridArea: "main2" }}>
+        <div style={{ gridArea: "main2", margin: "auto" }}>
           <p>งบปีปัจจุบัน</p>
           <p>{dataObject[index][`f${filter}_sum`]} บาท</p>
         </div>
-        <div style={{ backgroundColor: "skyblue", gridArea: "main3" }}></div>
-        <div style={{ backgroundColor: "black", gridArea: "main4" }}></div>
+        <div style={{ gridArea: "main3" }}></div>
+        <div style={{ gridArea: "main4", margin: "auto" }}>
+          {dataObject[index][`f${filter}_data_f`]
+            .replace(/_$/g, "")
+            .split("_")
+            .map((s, i) => (
+              <p>
+                {i}.{s} บาท
+              </p>
+            ))}
+        </div>
         <div style={{ backgroundColor: "blue", gridArea: "main5" }}></div>
         <div style={{ backgroundColor: "#2ec1ac", gridArea: "main6" }}></div>
-        <div style={{ backgroundColor: "#2ea1ac", gridArea: "main7" }}></div>
+        <div style={{ gridArea: "main7" }}>
+          <PieChart
+            data={[
+              { title: "One", value: 10, color: "#E38627" },
+              { title: "Two", value: 15, color: "#C13C37" },
+              { title: "Three", value: 20, color: "#6A2135" },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );
