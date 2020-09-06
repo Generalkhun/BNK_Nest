@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import data from "./sample.json";
-import { dataToJSONObject } from "./util";
+import { dataToJSONObject, range, stringToInterger, category } from "./util";
 import Option from "./Option";
-import { PieChart } from "react-minimal-pie-chart";
+import DonutChart from "react-donut-chart";
+const index = 0;
+const dataObject = dataToJSONObject(data);
+const dataPieObject = range(10).map((i) => {
+  return {
+    label: category[i],
+    value: stringToInterger(dataObject[index][`f${i + 1}_sum`]),
+  };
+});
 function Page2() {
-  // Declare a new state variable, which we'll call "count"
-
-  const dataObject = dataToJSONObject(data);
-
   const [filter, setFilter] = useState(1);
 
-  const index = 0;
   return (
     <div style={{ fontFamily: `'Kanit', sans-serif` }}>
       <div>
@@ -34,7 +37,7 @@ function Page2() {
                     'main4 main5 main6'
                     'main7 main7 main7'
                 `,
-          height: 500,
+          height: 400,
           width: 900,
         }}
       >
@@ -57,13 +60,7 @@ function Page2() {
         <div style={{ backgroundColor: "blue", gridArea: "main5" }}></div>
         <div style={{ backgroundColor: "#2ec1ac", gridArea: "main6" }}></div>
         <div style={{ gridArea: "main7" }}>
-          <PieChart
-            data={[
-              { title: "One", value: 10, color: "#E38627" },
-              { title: "Two", value: 15, color: "#C13C37" },
-              { title: "Three", value: 20, color: "#6A2135" },
-            ]}
-          />
+          <DonutChart data={dataPieObject} width={400} />
         </div>
       </div>
     </div>
