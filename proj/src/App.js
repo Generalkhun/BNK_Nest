@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import MapDistrict from "./MapDistrict.js";
-//import logo from "./logo.svg";
-//import { Map, Marker, Popup, TileLayer, Polygon } from "react-leaflet";
+import clsx from "clsx";
 import "./App.css";
-//import district shape data
-//import * as districtShape from "./data/district/districtNew.json";
-// import { Polygon } from "leaflet";
+import List from "@material-ui/core/List";
+import ListItemText from "@material-ui/core/ListItemText";
 import { stringJsonToJsonObj, dataToJSONObject } from "./util";
 import data from "./sample.json";
+import Forum from "./Forum";
 function App() {
-  //console.log(districtShape.features[0].geometry.coordinates[0])
   let [districtSelected, setDistrictSelected] = useState("");
+  const [forum, setForumOn] = useState("false");
 
   return (
     <div>
+      <Forum />
       <button onClick={() => console.log(dataToJSONObject(data))}>
         Log data
       </button>
-      <MapDistrict />
+      {/* <MapDistrict /> */}
     </div>
   );
 }
