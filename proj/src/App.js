@@ -7,16 +7,18 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { stringJsonToJsonObj, dataToJSONObject } from "./util";
 import data from "./sample.json";
 import Forum from "./Forum";
+import Page2 from "./Page2";
 function App() {
   let [districtSelected, setDistrictSelected] = useState("");
   const [forum, setForumOn] = useState("false");
 
   return (
     <div>
-      <Forum />
-      <button onClick={() => console.log(dataToJSONObject(data))}>
+      <Page2 />
+      {/* <Forum /> */}
+      {/* <button onClick={() => console.log(dataToJSONObject(data))}>
         Log data
-      </button>
+      </button> */}
       {/* <MapDistrict /> */}
     </div>
   );
