@@ -12,6 +12,16 @@ import * as districtShapeGEOJSON from "./data/district/districtNew.geojson";
 //import district expense data to display fill Visualization
 import * as districtExpenseData from "./sample.json";
 
+import {
+  dataToJSONObject,
+  range,
+  stringToInterger,
+  category,
+  fieldValue,
+  addValutToDistrictShape,
+} from "./util";
+
+const districhShapeWithValue = addValutToDistrictShape(districtShape);
 function MapDistrict() {
   console.log(console.log(districtExpenseData[0]));
   let [districtSelected, setDistrictSelected] = useState("");
@@ -28,16 +38,19 @@ function MapDistrict() {
 
   return (
     <Map center={[13.7133, 100.501]} zoom={11}>
-          <TileLayer
+      <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
 
       <Choropleth
-        data={{ type: "FeatureCollection", features: districtShape.features }}
-        identity = {(feature) => feature.properties.OBJECTID}
-        valueProperty={(feature) => feature.properties.no_female}
-        visible={feature => true}
+        data={{
+          type: "FeatureCollection",
+          features: districhShapeWithValue.default.features,
+        }}
+        identity={(feature) => feature.properties.OBJECTID}
+        valueProperty={(feature) => feature.properties.f3_sum_int}
+        visible={(feature) => true}
         scale={[
           "#FDE725FF",
           "#73D055FF",

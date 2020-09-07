@@ -26,7 +26,8 @@ const dataPieObject = range(10).map((i) => {
 function log() {
   const districhShapeWithValue = addValutToDistrictShape(districtShape);
   console.log(districhShapeWithValue);
-  console.log(districtShape);
+  console.log(districtShape.default.features.map((c) => c));
+  console.log(dataObject);
 }
 function Page2() {
   const [filter, setFilter] = useState(1);
