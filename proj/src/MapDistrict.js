@@ -4,6 +4,7 @@ import { Map, TileLayer, Polygon } from "react-leaflet";
 import "./App.css";
 
 import Choropleth from "react-leaflet-choropleth";
+import ChoroplethDisplayer from "./ChoroplethDisplayer.js";
 
 //import district shape data
 import * as districtShape from "./data/district/districtNew.json";
@@ -27,17 +28,21 @@ function MapDistrict() {
   };
 
   return (
+    <div>
+    <ChoroplethDisplayer />
     <Map center={[13.7133, 100.501]} zoom={11}>
-          <TileLayer
+
+
+      <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
 
       <Choropleth
         data={{ type: "FeatureCollection", features: districtShape.features }}
-        identity = {(feature) => feature.properties.OBJECTID}
+        identity={(feature) => feature.properties.OBJECTID}
         valueProperty={(feature) => feature.properties.no_female}
-        visible={feature => true}
+        visible={(feature) => true}
         scale={[
           "#FDE725FF",
           "#73D055FF",
@@ -56,6 +61,9 @@ function MapDistrict() {
         //ref={(el) => (this.Choropleth = el.leafletElement)}
       />
     </Map>
+    
+        
+      </div>
   );
 }
 
