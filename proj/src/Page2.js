@@ -50,7 +50,7 @@ function Page2() {
                     'main7 main7 main7'
                 `,
           height: 400,
-          width: 900,
+          width: 800,
         }}
       >
         <div style={{  gridArea: "main1" }}></div>
