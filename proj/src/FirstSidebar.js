@@ -12,7 +12,7 @@ import {
 import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 
-const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
+const FirstSidebar = ({ page, setPage, visible, setVisible ,districtSelected,setDistrictSelected}) => {
   const [filter, setFilter] = useState(0);
   return (
     <Grid columns={1}>
@@ -47,7 +47,7 @@ const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
           </Sidebar>
 
           <Sidebar.Pusher>
-            <MapDistrict filter={filter} />
+            <MapDistrict filter={filter} districtSelected = {districtSelected} setDistrictSelected = {setDistrictSelected}/>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </Grid.Column>

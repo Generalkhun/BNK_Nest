@@ -36,10 +36,9 @@ const colors = [
   "#69d2e7",
 ];
 const districhShapeWithValue = addValutToDistrictShape(districtShape);
-function MapDistrict({ filter }) {
+function MapDistrict({ filter,districtSelected,setDistrictSelected}) {
   console.log(console.log(districhShapeWithValue));
-  let [districtSelected, setDistrictSelected] = useState("");
-  let [mouseOnDistrict, setmouseOnDistrict] = useState("");
+  //let [districtSelected, setDistrictSelected] = useState("");
 
   // style of choropleth
   const style = {
@@ -82,8 +81,10 @@ function MapDistrict({ filter }) {
             layer.on("mouseout", function (e) {
               this.closePopup();
             });
-            layer.on("click", (e) =>
-              console.log(setmouseOnDistrict(e.target.feature.properties.dname))
+            layer.on("click", (e) => {
+              setDistrictSelected(districtSelected = e.target.feature.properties.dname)
+              console.log(districtSelected)
+            }
             );
           }}
           //ref={(el) => (this.Choropleth = el.leafletElement)}
