@@ -10,6 +10,8 @@ import {
   Sidebar,
 } from "semantic-ui-react";
 import MapDistrict from "./MapDistrict.js";
+import ApexCharts from "./FirstBarChart.js";
+
 const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
   return (
     <Grid columns={1}>
@@ -22,15 +24,16 @@ const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
             inverted
             vertical
             visible={visible}
-            width="thin"
+            width="wide"
           >
+          <ApexCharts/>
             <Menu.Item as="a">
               <Icon name="home" />
               {page}
             </Menu.Item>
             <Menu.Item as="a">
               <Icon name="gamepad" />
-              Games
+              
             </Menu.Item>
             <Menu.Item as="a">
               <Icon name="camera" />
