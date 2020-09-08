@@ -11,7 +11,15 @@ import {
 } from "semantic-ui-react";
 import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
+import {
+  stringJsonToJsonObj,
+  dataToJSONObject,
+  stringToInterger,
+  range,
+} from "./util";
+import data from "./sample.json";
 
+const dataObject = dataToJSONObject(data);
 const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
   const [filter, setFilter] = useState(0);
   return (
@@ -32,6 +40,7 @@ const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
               <Icon
                 name="home"
                 onClick={() => {
+                  console.log(dataObject);
                   setFilter(0);
                 }}
               />
