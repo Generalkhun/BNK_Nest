@@ -23,7 +23,18 @@ import {
   fieldValue,
   addValutToDistrictShape,
 } from "./util";
-
+const colors = [
+  "#33b2df",
+  "#546E7A",
+  "#d4526e",
+  "#13d8aa",
+  "#A5978B",
+  "#2b908f",
+  "#f9a3a4",
+  "#90ee7e",
+  "#f48024",
+  "#69d2e7",
+];
 const districhShapeWithValue = addValutToDistrictShape(districtShape);
 function MapDistrict({ filter }) {
   console.log(console.log(districhShapeWithValue));
@@ -59,16 +70,8 @@ function MapDistrict({ filter }) {
           identity={(feature) => feature.properties.OBJECTID}
           valueProperty={(feature) => feature.properties[`f${filter}_sum_int`]}
           visible={(feature) => true}
-          scale={[
-            "#FDE725FF",
-            "#73D055FF",
-            "#29AF7FFF",
-            "#238A8DFF",
-            "#39568CFF",
-            "#482677FF",
-            "#440154FF",
-          ]}
-          steps={7}
+          scale={[colors[filter - 1], "#FFFFFF"]}
+          steps={10}
           mode="e"
           style={style}
           onEachFeature={(feature, layer) =>
