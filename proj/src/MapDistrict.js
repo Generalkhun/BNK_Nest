@@ -15,9 +15,6 @@ import * as districtShapeGEOJSON from "./data/district/districtNew.geojson";
 //import district expense data to display fill Visualization
 import * as districtExpenseData from "./sample.json";
 
-
-
-
 import {
   dataToJSONObject,
   range,
@@ -44,43 +41,43 @@ function MapDistrict() {
 
   return (
     <div>
-    
-    <Map center={[13.7133, 100.501]} zoom={11} style = {{width: '100%', height:"90vh"}}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      />
+      <Map
+        center={[13.7133, 100.501]}
+        zoom={11}
+        style={{ width: "100%", height: "90vh" }}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        />
 
-      <Choropleth
-
-        data={{
-          type: "FeatureCollection",
-          features: districhShapeWithValue.default.features,
-        }}
-        identity={(feature) => feature.properties.OBJECTID}
-        valueProperty={(feature) => feature.properties.f3_sum_int}
-        visible={(feature) => true}
-        scale={[
-          "#FDE725FF",
-          "#73D055FF",
-          "#29AF7FFF",
-          "#238A8DFF",
-          "#39568CFF",
-          "#482677FF",
-          "#440154FF",
-        ]}
-        steps={7}
-        mode="e"
-        style={style}
-        onEachFeature={(feature, layer) =>
-          layer.bindPopup(feature.properties.dname)
-        }
-        //ref={(el) => (this.Choropleth = el.leafletElement)}
-      />
-    </Map>
-    
-        
-      </div>
+        <Choropleth
+          data={{
+            type: "FeatureCollection",
+            features: districhShapeWithValue.default.features,
+          }}
+          identity={(feature) => feature.properties.OBJECTID}
+          valueProperty={(feature) => feature.properties.f3_sum_int}
+          visible={(feature) => true}
+          scale={[
+            "#FDE725FF",
+            "#73D055FF",
+            "#29AF7FFF",
+            "#238A8DFF",
+            "#39568CFF",
+            "#482677FF",
+            "#440154FF",
+          ]}
+          steps={7}
+          mode="e"
+          style={style}
+          onEachFeature={(feature, layer) =>
+            layer.bindPopup(feature.properties.dname)
+          }
+          //ref={(el) => (this.Choropleth = el.leafletElement)}
+        />
+      </Map>
+    </div>
   );
 }
 
