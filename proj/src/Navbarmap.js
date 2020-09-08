@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Navbarmap() {
+function Navbarmap({page,setPage}) {
+  
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">
@@ -15,9 +16,9 @@ function Navbarmap() {
       />
             </Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="#sepDis">งบที่แยกตามเขต</Nav.Link>
-        <Nav.Link href="#unSepDis">งบที่ไม่แยกตามเขต</Nav.Link>
-        <Nav.Link href="#forum">กระทู้สนทนา</Nav.Link>
+        <Nav.Link href="#sepDis" onClick = {()=> setPage("sepDis")} >งบที่แยกตามเขต</Nav.Link>
+        <Nav.Link href="#unSepDis" onClick = {()=> setPage("unSepDis")}>งบที่ไม่แยกตามเขต</Nav.Link>
+        <Nav.Link href="#forum" onClick = {()=> setPage("forum")}>กระทู้สนทนา</Nav.Link>
       </Nav>
     </Navbar>
   );

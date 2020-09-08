@@ -14,14 +14,21 @@ function App() {
   let [districtSelected, setDistrictSelected] = useState("");
   const [forum, setForumOn] = useState("false");
 
+  // set page state 
+  const [page,setPage] = useState("sepDis")
+
   return (
+    
     <div>
       {/* <Page2 /> */}
       {/* <Forum /> */}
       {/* <button onClick={() => console.log(dataToJSONObject(data))}>
         Log data
       </button> */}
-      <Navbarmap />
+      <Navbarmap 
+        page = {page}
+        setPage = {setPage}
+      />
       <MapDistrict />
     </div>
   );
