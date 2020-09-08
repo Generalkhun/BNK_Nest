@@ -76,12 +76,19 @@ function MapDistrict({ filter }) {
           mode="e"
           style={style}
           onEachFeature={(feature, layer) => {
-            layer.bindPopup(feature.properties.dname)
-            layer.on("click",(e)=>console.log(setmouseOnDistrict(e.target.feature.properties.dname)))
+            layer.bindPopup(feature.properties.dname);
+            layer.on("mouseover", function (e) {
+              this.openPopup();
+            });
+            layer.on("mouseout", function (e) {
+              this.closePopup();
+            });
+            layer.on("click", (e) =>
+              console.log(setmouseOnDistrict(e.target.feature.properties.dname))
+            );
           }}
           //ref={(el) => (this.Choropleth = el.leafletElement)}
         />
-      
       </Map>
     </div>
   );
