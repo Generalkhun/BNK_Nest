@@ -13,7 +13,8 @@ function Navbarmap({page,setPage}) {
         width="40"
         height="40"
         className="d-inline-block align-top"
-      />
+      />{'   '}
+      ตรวจสอบ วิจารณ์ งบกทม 63'
             </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link href="#sepDis" onClick = {()=> setPage("sepDis")} >งบที่แยกตามเขต</Nav.Link>
