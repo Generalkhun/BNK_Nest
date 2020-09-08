@@ -44,7 +44,7 @@ function MapDistrict() {
 
   return (
     <div>
-    <ChoroplethDisplayer />
+    
     <Map center={[13.7133, 100.501]} zoom={11} style = {{width: '100%', height:"90vh"}}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
