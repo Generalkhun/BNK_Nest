@@ -8,19 +8,20 @@ import { stringJsonToJsonObj, dataToJSONObject } from "./util";
 import data from "./sample.json";
 import Forum from "./Forum";
 import Page2 from "./Page2";
+import Example from "./example";
 function App() {
   let [districtSelected, setDistrictSelected] = useState("");
   const [forum, setForumOn] = useState("false");
 
   return (
     <div>
-
       {/* <Page2 /> */}
       {/* <Forum /> */}
       {/* <button onClick={() => console.log(dataToJSONObject(data))}>
         Log data
       </button> */}
-      <MapDistrict />
+      <Example />
+      {/* <MapDistrict /> */}
     </div>
   );
 }
