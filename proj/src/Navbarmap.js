@@ -15,9 +15,9 @@ function Navbarmap() {
       />
             </Navbar.Brand>
       <Nav className="mr-auto">
-        <Nav.Link href="#home">งบที่แยกตามเขต</Nav.Link>
-        <Nav.Link href="#features">งบที่ไม่แยกตามเขต</Nav.Link>
-        <Nav.Link href="#features">กระทู้สนทนา</Nav.Link>
+        <Nav.Link href="#sepDis">งบที่แยกตามเขต</Nav.Link>
+        <Nav.Link href="#unSepDis">งบที่ไม่แยกตามเขต</Nav.Link>
+        <Nav.Link href="#forum">กระทู้สนทนา</Nav.Link>
       </Nav>
     </Navbar>
   );
