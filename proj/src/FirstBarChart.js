@@ -1,19 +1,24 @@
 import React from "react";
 import ReactApexChart from 'react-apexcharts'
+import FirstbarGraphDataCal from "./FirstbarGraphDataCal.js"
+import {category} from "./util.js"
 
-class ApexChart extends React.Component {
+class FirstBarChart extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
       
         series: [{
-          data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
+          data: FirstbarGraphDataCal()
         }],
         options: {
+            legend:{
+                show:false
+            },
           chart: {
             type: 'bar',
-            height: 380
+            height: 1000
           },
           plotOptions: {
             bar: {
@@ -47,9 +52,7 @@ class ApexChart extends React.Component {
             colors: ['#fff']
           },
           xaxis: {
-            categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
-              'United States', 'China', 'India'
-            ],
+            categories: category,
           },
           yaxis: {
             labels: {
@@ -91,7 +94,7 @@ class ApexChart extends React.Component {
         
 
   <div id="chart">
-<ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={380} />
+<ReactApexChart options={this.state.options} series={this.state.series} type="bar" height={600} />
 </div>
 
 
@@ -100,4 +103,4 @@ class ApexChart extends React.Component {
   }
 
 
-export default ApexChart;
+export default FirstBarChart;

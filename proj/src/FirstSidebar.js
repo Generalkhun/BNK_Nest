@@ -10,7 +10,7 @@ import {
   Sidebar,
 } from "semantic-ui-react";
 import MapDistrict from "./MapDistrict.js";
-import ApexCharts from "./FirstBarChart.js";
+import FirstBarChart from "./FirstBarChart.js";
 
 const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
   return (
@@ -26,7 +26,7 @@ const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
             visible={visible}
             width="wide"
           >
-          <ApexCharts/>
+          <FirstBarChart/>
             <Menu.Item as="a">
               <Icon name="home" />
               {page}
