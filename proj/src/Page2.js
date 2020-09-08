@@ -9,7 +9,7 @@ import {
   addValutToDistrictShape,
 } from "./util";
 import Option from "./Option";
-// import DonutChart from "react-donut-chart";
+ import DonutChart from "react-donut-chart";
 import * as districtShape from "./data/district/districtNew.json";
 
 var _ = require("lodash");
@@ -33,7 +33,7 @@ function Page2() {
   const [filter, setFilter] = useState(1);
 
   return (
-    <div style={{ fontFamily: `'Kanit', sans-serif` }}>
+    <div style={{ fontFamily: `'Kanit', sans-serif` ,color:"white"}}>
       <div>
         <h1>{dataObject[index].name}</h1>
         <button onClick={log}>{"saraku"}</button>
@@ -49,11 +49,11 @@ function Page2() {
                     'main4 main5 main6'
                     'main7 main7 main7'
                 `,
-          height: 400,
-          width: 900,
+          height: 300,
+          width: 800,
         }}
       >
-        <div style={{ backgroundColor: "pink", gridArea: "main1" }}></div>
+        <div style={{  gridArea: "main1" }}></div>
         <div style={{ gridArea: "main2", margin: "auto" }}>
           <p>งบปีปัจจุบัน</p>
           <p>{dataObject[index][`f${filter}_sum`]} บาท</p>
@@ -69,10 +69,10 @@ function Page2() {
               </p>
             ))}
         </div>
-        <div style={{ backgroundColor: "blue", gridArea: "main5" }}></div>
-        <div style={{ backgroundColor: "#2ec1ac", gridArea: "main6" }}></div>
+        <div style={{  gridArea: "main5" }}></div>
+        <div style={{  gridArea: "main6" }}></div>
         <div style={{ gridArea: "main7" }}>
-          {/* <DonutChart data={dataPieObject} width={400} /> */}
+          <DonutChart data={dataPieObject} width={400} />
         </div>
       </div>
     </div>

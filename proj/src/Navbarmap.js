@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Navbarmap({ page, setPage, setVisible }) {
+function Navbarmap({ page, setPage, setVisible ,setVisibleP2}) {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">
@@ -20,11 +20,13 @@ function Navbarmap({ page, setPage, setVisible }) {
         <Nav.Link
           href="#sepDis"
           onClick={() => {
+            setVisibleP2(false)
             setPage("sepDis");
             setVisible(false)
+            
               if(page != null){
 
-              setTimeout(function(){ setVisible(true) }, 250);
+              setTimeout(function(){ setVisible(true) }, 300);
 
               }
             
@@ -35,6 +37,7 @@ function Navbarmap({ page, setPage, setVisible }) {
         <Nav.Link
           href="#unSepDis"
           onClick={() => {
+            setVisibleP2(false)
             setPage("unSepDis");
             setVisible(false)
               if(page != null){
