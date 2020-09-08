@@ -25,7 +25,7 @@ import {
 } from "./util";
 
 const districhShapeWithValue = addValutToDistrictShape(districtShape);
-function MapDistrict() {
+function MapDistrict({ filter }) {
   console.log(console.log(districhShapeWithValue));
   let [districtSelected, setDistrictSelected] = useState("");
   let [mouseOnDistrict, setmouseOnDistrict] = useState("");
@@ -57,7 +57,7 @@ function MapDistrict() {
             features: districhShapeWithValue.default.features,
           }}
           identity={(feature) => feature.properties.OBJECTID}
-          valueProperty={(feature) => feature.properties.f3_sum_int}
+          valueProperty={(feature) => feature.properties[`f${filter}_sum_int`]}
           visible={(feature) => true}
           scale={[
             "#FDE725FF",
