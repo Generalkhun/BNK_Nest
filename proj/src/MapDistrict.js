@@ -24,6 +24,7 @@ import {
   addValutToDistrictShape,
 } from "./util";
 const colors = [
+  "#000000",
   "#33b2df",
   "#546E7A",
   "#d4526e",
@@ -70,7 +71,7 @@ function MapDistrict({ filter }) {
           identity={(feature) => feature.properties.OBJECTID}
           valueProperty={(feature) => feature.properties[`f${filter}_sum_int`]}
           visible={(feature) => true}
-          scale={[colors[filter - 1], "#FFFFFF"]}
+          scale={[colors[filter], "#FFFFFF"]}
           steps={10}
           mode="e"
           style={style}

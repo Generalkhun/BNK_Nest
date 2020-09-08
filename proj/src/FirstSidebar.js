@@ -13,7 +13,7 @@ import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 
 const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
-  const [filter, setFilter] = useState(1);
+  const [filter, setFilter] = useState(0);
   return (
     <Grid columns={1}>
       <Grid.Column>
@@ -29,7 +29,12 @@ const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
           >
             <FirstBarChart filter={filter} setFilter={setFilter} />
             <Menu.Item as="a">
-              <Icon name="home" />
+              <Icon
+                name="home"
+                onClick={() => {
+                  setFilter(0);
+                }}
+              />
               {page}
             </Menu.Item>
             <Menu.Item as="a">

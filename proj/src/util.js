@@ -41,6 +41,7 @@ const addValutToDistrictShape = (districtshape) => {
   const dataObjectInter = dataObject.map((o) => {
     return {
       ...o,
+      f0_sum_int: stringToInterger(o["sum"]),
       f1_sum_int: stringToInterger(o["f1_sum"]),
       f2_sum_int: stringToInterger(o["f2_sum"]),
       f3_sum_int: stringToInterger(o["f3_sum"]),
@@ -78,5 +79,4 @@ export {
   category,
   fieldValue,
   addValutToDistrictShape,
-  
 };
