@@ -36,7 +36,14 @@ const colors = [
   "#69d2e7",
 ];
 const districhShapeWithValue = addValutToDistrictShape(districtShape);
-function MapDistrict({ filter,districtSelected,setDistrictSelected}) {
+function MapDistrict({
+  filter,
+  districtSelected,
+  setDistrictSelected,
+  setVisibleP2,
+  visibleP2,
+  setVisible,
+}) {
   console.log(console.log(districhShapeWithValue));
   //let [districtSelected, setDistrictSelected] = useState("");
 
@@ -82,10 +89,17 @@ function MapDistrict({ filter,districtSelected,setDistrictSelected}) {
               this.closePopup();
             });
             layer.on("click", (e) => {
-              setDistrictSelected(districtSelected = e.target.feature.properties.dname)
-              console.log(districtSelected)
-            }
-            );
+              setDistrictSelected(
+                (districtSelected = e.target.feature.properties.dname)
+              );
+
+              setVisibleP2(false);
+              setTimeout(() => {
+                setVisibleP2(true);
+              }, 300);
+
+              console.log(districtSelected);
+            });
           }}
           //ref={(el) => (this.Choropleth = el.leafletElement)}
         />

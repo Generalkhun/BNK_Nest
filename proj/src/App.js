@@ -25,10 +25,7 @@ function App() {
 
   // set visible of sidebar state
   const [visible, setVisible] = React.useState(true);
-
-  // const sum10 = range(1).map( c => dataObject.reduce(
-  //   (sum, i) => sum + stringToInterger(i[`f{i+1}_sum`]),
-  //   0 ))
+  const [visibleP2,setVisibleP2] = React.useState(false);
 
   return (
     <div>
@@ -39,15 +36,20 @@ function App() {
         setPage={setPage}
         visible={visible}
         setVisible={setVisible}
+        setVisibleP2 = {setVisibleP2}
       />
       <FirstSidebar
         page={page}
         setPage={setPage}
         visible={visible}
+        visibleP2 = {visibleP2}
         setVisible={setVisible}
+        setVisibleP2={setVisibleP2}
         districtSelected={districtSelected}
         setDistrictSelected={setDistrictSelected}
       />
+
+      
     </div>
   );
 }
