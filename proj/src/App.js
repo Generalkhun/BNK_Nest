@@ -14,7 +14,8 @@ function App() {
 
   return (
     <div>
-      {/*<Page2 />*/}
+
+      {/* <Page2 /> */}
       {/* <Forum /> */}
       {/* <button onClick={() => console.log(dataToJSONObject(data))}>
         Log data

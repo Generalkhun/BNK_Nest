@@ -1,16 +1,34 @@
 import React, { useState } from "react";
 import data from "./sample.json";
-import { dataToJSONObject, range, stringToInterger, category } from "./util";
+import {
+  dataToJSONObject,
+  range,
+  stringToInterger,
+  category,
+  fieldValue,
+  addValutToDistrictShape,
+} from "./util";
 import Option from "./Option";
-import DonutChart from "react-donut-chart";
+// import DonutChart from "react-donut-chart";
+import * as districtShape from "./data/district/districtNew.json";
+
+var _ = require("lodash");
 const index = 0;
 const dataObject = dataToJSONObject(data);
+
 const dataPieObject = range(10).map((i) => {
   return {
     label: category[i],
     value: stringToInterger(dataObject[index][`f${i + 1}_sum`]),
   };
 });
+
+function log() {
+  const districhShapeWithValue = addValutToDistrictShape(districtShape);
+  console.log(districhShapeWithValue);
+  console.log(districtShape.default.features.map((c) => c));
+  console.log(dataObject);
+}
 function Page2() {
   const [filter, setFilter] = useState(1);
 
@@ -18,13 +36,7 @@ function Page2() {
     <div style={{ fontFamily: `'Kanit', sans-serif` }}>
       <div>
         <h1>{dataObject[index].name}</h1>
-        <button
-          onClick={() => {
-            console.log(dataObject);
-          }}
-        >
-          {"saraku"}
-        </button>
+        <button onClick={log}>{"saraku"}</button>
         <Option setFilter={setFilter} />
       </div>
       <div
@@ -60,7 +72,7 @@ function Page2() {
         <div style={{ backgroundColor: "blue", gridArea: "main5" }}></div>
         <div style={{ backgroundColor: "#2ec1ac", gridArea: "main6" }}></div>
         <div style={{ gridArea: "main7" }}>
-          <DonutChart data={dataPieObject} width={400} />
+          {/* <DonutChart data={dataPieObject} width={400} /> */}
         </div>
       </div>
     </div>

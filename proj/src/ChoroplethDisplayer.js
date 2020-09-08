@@ -1,34 +1,61 @@
 import React, { useState } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button"
+import {
+  Checkbox,
+  Grid,
+  Header,
+  Icon,
+  Image,
+  Menu,
+  Segment,
+  Sidebar,
+} from "semantic-ui-react";
 
+const ChoroplethDisplayer = () => {
+  const [visible, setVisible] = React.useState(false);
 
-function ChoroplethDisplayer() {
   return (
-    <Accordion defaultActiveKey="0">
-      <Card>
-        <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey="0">
-            Click me!
-          </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="0">
-          <Card.Body>Hello! I'm the body</Card.Body>
-        </Accordion.Collapse>
-      </Card>
-      <Card>
-        <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey="1">
-            Click me!
-          </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="1">
-          <Card.Body>Hello! I'm another body</Card.Body>
-        </Accordion.Collapse>
-      </Card>
-    </Accordion>
+    <Grid columns={1}>
+      <Checkbox
+        checked={visible}
+        label={{ children: <code>visible</code> }}
+        onChange={(e, data) => setVisible(data.checked)}
+      />
+
+      <Grid.Column>
+        <Sidebar.Pushable as={Segment}>
+          <Sidebar
+            as={Menu}
+            animation="overlay"
+            icon="labeled"
+            inverted
+            onHide={() => setVisible(false)}
+            vertical
+            visible={visible}
+            width="thin"
+          >
+            <Menu.Item as="a">
+              <Icon name="home" />
+              Home
+            </Menu.Item>
+            <Menu.Item as="a">
+              <Icon name="gamepad" />
+              Games
+            </Menu.Item>
+            <Menu.Item as="a">
+              <Icon name="camera" />
+              Channels
+            </Menu.Item>
+          </Sidebar>
+
+          <Sidebar.Pusher>
+            <Segment basic>
+              <Header as="h3">Application Content</Header>
+            </Segment>
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
+      </Grid.Column>
+    </Grid>
   );
-}
+};
 
 export default ChoroplethDisplayer;
