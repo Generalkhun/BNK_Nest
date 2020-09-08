@@ -77,12 +77,8 @@ function MapDistrict({ filter }) {
           style={style}
           onEachFeature={(feature, layer) => {
             layer.bindPopup(feature.properties.dname)
-            setDistrictSelected(feature.properties.dname)
-            console.log(feature.properties.dname)
-
-          }
-            
-          }
+            layer.on("click",(e)=>console.log(setmouseOnDistrict(e.target.feature.properties.dname)))
+          }}
           //ref={(el) => (this.Choropleth = el.leafletElement)}
         />
       
