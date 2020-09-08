@@ -38,6 +38,10 @@ const fieldValue = (name, obj) => {
   )[0];
 };
 
+const addCleanDescToData2 = (data2) => {
+  return { ...data2, cleanDesc: data2.desc.split("&") };
+};
+
 const addValutToDistrictShape = (districtshape) => {
   const dataObject = dataToJSONObject(data);
   const dataObjectInter = dataObject.map((o) => {
@@ -81,4 +85,5 @@ export {
   category,
   fieldValue,
   addValutToDistrictShape,
+  addCleanDescToData2,
 };
