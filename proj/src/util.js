@@ -33,7 +33,9 @@ const category = [
 
 const fieldValue = (name, obj) => {
   //obj.filter((s) => s.name.includes(name))[0];
-  return obj.filter((s) => s.name.includes(name))[0];
+  return obj.filter((s) =>
+    s.name.replace(/[่์]/, "").includes(name.replace(/[่์]/, ""))
+  )[0];
 };
 
 const addValutToDistrictShape = (districtshape) => {
