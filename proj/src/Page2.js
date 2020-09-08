@@ -49,7 +49,7 @@ function Page2() {
                     'main4 main5 main6'
                     'main7 main7 main7'
                 `,
-          height: 400,
+          height: 300,
           width: 800,
         }}
       >
