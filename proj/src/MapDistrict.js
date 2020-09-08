@@ -10,7 +10,6 @@ import ChoroplethDisplayer from "./ChoroplethDisplayer.js";
 
 //import district shape data
 import * as districtShape from "./data/district/districtNew.json";
-import * as districtShapeGEOJSON from "./data/district/districtNew.geojson";
 
 //import district expense data to display fill Visualization
 import * as districtExpenseData from "./sample.json";
