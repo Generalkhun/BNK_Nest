@@ -75,11 +75,17 @@ function MapDistrict({ filter }) {
           steps={10}
           mode="e"
           style={style}
-          onEachFeature={(feature, layer) =>
+          onEachFeature={(feature, layer) => {
             layer.bindPopup(feature.properties.dname)
+            setDistrictSelected(feature.properties.dname)
+            console.log(feature.properties.dname)
+
+          }
+            
           }
           //ref={(el) => (this.Choropleth = el.leafletElement)}
         />
+      
       </Map>
     </div>
   );
