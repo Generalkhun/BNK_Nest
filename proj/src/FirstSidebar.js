@@ -10,19 +10,9 @@ import {
   Sidebar,
 } from "semantic-ui-react";
 import MapDistrict from "./MapDistrict.js";
-const SidebarExampleSidebar = () => {
-  const [visible, setVisible] = React.useState(false);
-
+const FirstSidebar = ({ page, setPage, visible, setVisible }) => {
   return (
     <Grid columns={1}>
-      <Grid.Column>
-        <Checkbox
-          checked={visible}
-          label={{ children: <code>visible</code> }}
-          onChange={(e, data) => setVisible(data.checked)}
-        />
-      </Grid.Column>
-
       <Grid.Column>
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -30,14 +20,13 @@ const SidebarExampleSidebar = () => {
             animation="overlay"
             icon="labeled"
             inverted
-            onHide={() => setVisible(false)}
             vertical
             visible={visible}
             width="thin"
           >
             <Menu.Item as="a">
               <Icon name="home" />
-              Home
+              {page}
             </Menu.Item>
             <Menu.Item as="a">
               <Icon name="gamepad" />
@@ -58,4 +47,4 @@ const SidebarExampleSidebar = () => {
   );
 };
 
-export default SidebarExampleSidebar;
+export default FirstSidebar;
