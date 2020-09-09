@@ -94,6 +94,10 @@ const addValutToDistrictShape = (districtshape) => {
   };
 };
 
+const deleteLastList = (a) => {
+  const c = a.pop();
+  return c;
+};
 export {
   stringJsonToJsonObj,
   dataToJSONObject,
@@ -104,4 +108,5 @@ export {
   addValutToDistrictShape,
   addCleanDescToData2,
   category2,
+  deleteLastList,
 };
