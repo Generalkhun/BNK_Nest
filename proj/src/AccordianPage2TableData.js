@@ -13,7 +13,7 @@ const colors = [
   "#f48024",
   "#69d2e7",
 ];
-function AccordianPage2TableData({ cat, data, index }) {
+function AccordianPage2TableData({ cat, data, index, setVisibleForum }) {
   return (
     <Card>
       <Accordion.Toggle
@@ -21,7 +21,14 @@ function AccordianPage2TableData({ cat, data, index }) {
         eventKey={index}
         style={{ backgroundColor: colors[index] }}
       >
-        {cat}
+        {cat}{" "}
+        <button
+          onClick={() => {
+            setVisibleForum(true);
+          }}
+        >
+          Report
+        </button>
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={index}>
         <Table striped bordered hover variant="dark">

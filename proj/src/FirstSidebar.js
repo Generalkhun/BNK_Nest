@@ -17,9 +17,11 @@ import Page2L2 from "./Page2L2.js";
 import "./index.css";
 import SecondBarChart from "./SecondBarChart.js";
 import FeedExampleEventsProp from "./MockupFeed.js";
-import CommentExampleComment from "./MockupComments.js"
-import LeftSideForum from "./LeftSideForum.js"
+import CommentExampleComment from "./MockupComments.js";
+import LeftSideForum from "./LeftSideForum.js";
+import Topic from "./Topic.js";
 import Page3 from "./Page3.js";
+import Page4 from "./Page4.js";
 const FirstSidebar = ({
   page,
   setPage,
@@ -36,6 +38,7 @@ const FirstSidebar = ({
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
+  const [Mock1, setMock1] = useState(0);
   return (
     <Grid columns={1}>
       <Grid.Column>
@@ -93,7 +96,10 @@ const FirstSidebar = ({
               )}
             </Menu.Item>
             {page === "sepDis" ? (
-              <Page2 districtSelected={districtSelected} />
+              <Page2
+                districtSelected={districtSelected}
+                setVisibleForum={setVisibleForum}
+              />
             ) : (
               <Page2L2 districtSelected={districtSelected} filter2={filter2} />
             )}
@@ -106,14 +112,23 @@ const FirstSidebar = ({
             visible={visibleForum}
             width="wide"
           >
-            <Menu.Item as="a" header>
+            <div style={{ height: 500, display: "flex", flexDirection: "row" }}>
+              <Menu.Item as="a" header>
+                <div>
+                  <LeftSideForum />
+                </div>
+              </Menu.Item>
               <div>
-              <LeftSideForum />
+                <Topic setMock1={setMock1} />
               </div>
-            </Menu.Item>
-            <div>
-                <CommentExampleComment />
-              </div>
+              {Mock1 ? (
+                <div>
+                  <CommentExampleComment />
+                </div>
+              ) : (
+                <div></div>
+              )}
+            </div>
           </Sidebar>
 
           <Sidebar
@@ -125,6 +140,9 @@ const FirstSidebar = ({
           >
             <Menu.Item as="a" header>
               <Page3 />
+            </Menu.Item>
+            <Menu.Item as="a" header>
+              <Page4 />
             </Menu.Item>
           </Sidebar>
 
