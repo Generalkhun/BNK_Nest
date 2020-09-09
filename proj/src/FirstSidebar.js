@@ -16,6 +16,7 @@ import Page2L2 from "./Page2L2.js";
 import "./index.css";
 import SecondBarChart from "./SecondBarChart.js";
 import FeedExampleEventsProp from "./MockupFeed.js";
+import CommentExampleComment from "./MockupComments.js"
 import Page3 from "./Page3.js";
 const FirstSidebar = ({
   page,
@@ -103,7 +104,7 @@ const FirstSidebar = ({
               </div>
             </Menu.Item>
             <div>
-                <FeedExampleEventsProp />
+                <CommentExampleComment />
               </div>
           </Sidebar>
 
