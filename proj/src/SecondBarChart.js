@@ -130,13 +130,6 @@ class SecondBarChart extends React.Component {
   render() {
     return (
       <div id="chart">
-        <button
-          onClick={() => {
-            console.log(data2Object);
-          }}
-        >
-          lg
-        </button>
         <ReactApexChart
           options={this.state.options}
           series={this.state.series}

@@ -35,7 +35,7 @@ function Navbarmap({
           height="40"
           className="d-inline-block align-top"
         />
-        ตรวจงานกทม 63'
+        เช็คงานกทม. 63'
       </Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link

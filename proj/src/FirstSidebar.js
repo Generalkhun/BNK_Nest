@@ -9,6 +9,7 @@ import {
   Segment,
   Sidebar,
 } from "semantic-ui-react";
+import { Button } from 'semantic-ui-react'
 import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 import Page2 from "./Page2.js";
@@ -69,6 +70,13 @@ const FirstSidebar = ({
                 setVisibleP2={setVisibleP2}
               />
             )}
+            {page === "sepDis" ? (
+              <Button primary onClick = {() => setFilter(0)}>
+                <p>{`รวม: 19064 ลบ. `}</p>
+                </Button>
+              ) : (
+                <p></p>
+              )}
           </Sidebar>
 
           <Sidebar
