@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, Card, Table } from "react-bootstrap";
+import {stringToInterger} from "./util.js"
 
 function AccordianPage2TableData({ cat, data, index }) {
   return (
