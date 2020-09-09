@@ -51,7 +51,7 @@ const FirstSidebar = ({
             <Menu.Item as="a" stylestyle={{ fontFamily: "Anakotmai" }}>
               <Icon name="money" />
               {page === "sepDis" ? (
-                <p>"งบที่แยกตามเขต กทม. ปี 63"</p>
+                <p>"งบที่แยกตามเขต"</p>
               ) : (
                 <p>"งบที่ไม่แยกตามเขต"</p>
               )}
