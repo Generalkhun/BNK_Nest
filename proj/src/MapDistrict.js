@@ -101,8 +101,8 @@ function MapDistrict({
           visible={(feature) => true}
           scale={
             page == "sepDis"
-              ? [colors[filter], "#FFFFFF"]
-              : [colors2[filter2], "#FFFFFF"]
+              ? [ "#FFFFFF",colors[filter]]
+              : [ "#FFFFFF",colors2[filter2]]
           }
           steps={10}
           mode="e"
