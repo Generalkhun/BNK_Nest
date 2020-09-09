@@ -102,6 +102,9 @@ const FirstSidebar = ({
                 <FeedExampleEventsProp />
               </div>
             </Menu.Item>
+            <div>
+                <FeedExampleEventsProp />
+              </div>
           </Sidebar>
 
           <Sidebar

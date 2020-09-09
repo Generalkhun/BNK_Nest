@@ -53,7 +53,8 @@ function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum ,se
           onClick={() => {
             setPage("forum");
             //setVisible(false);
-            setVisibleForum(true);
+            
+            setVisibleForum((prev)=>!prev)
           }}
         >
           กระทู้สนทนา
@@ -63,7 +64,7 @@ function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum ,se
           onClick={() => {
             setPage("leaderboard");
             //setVisible(false);
-            setVisibleLeaderBoard(true);
+            setVisibleLeaderBoard((prev)=>!prev);
           }}
         >
           ตารางคะแนนการมีส่วนร่วม
