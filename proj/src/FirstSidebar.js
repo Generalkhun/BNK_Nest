@@ -13,6 +13,7 @@ import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 import Page2 from "./Page2.js";
 import "./index.css";
+import SecondBarChart from "./SecondBarChart.js";
 const FirstSidebar = ({
   page,
   setPage,
@@ -38,17 +39,18 @@ const FirstSidebar = ({
             width="wide"
           >
             <Menu.Item as="a" stylestyle={{ fontFamily: "Anakotmai" }}>
-              <Icon
-                name="money"
-              />
+              <Icon name="money" />
               {page === "sepDis" ? (
                 <p>"งบที่แยกตามเขต กทม. ปี 63"</p>
               ) : (
                 <p>"งบที่ไม่แยกตามเขต"</p>
               )}
             </Menu.Item>
-            <FirstBarChart filter={filter} setFilter={setFilter} />
-            <button onClick ={ () => setFilter(0)}>ssss</button>
+            {page === "sepDis" ? (
+              <FirstBarChart filter={filter} setFilter={setFilter} />
+            ) : (
+              <SecondBarChart filter={filter} setFilter={setFilter} />
+            )}
           </Sidebar>
 
           <Sidebar
@@ -61,15 +63,12 @@ const FirstSidebar = ({
             width="very wide"
           >
             <Menu.Item as="a" header>
-            <Icon
-                name="money"
-              />
+              <Icon name="money" />
               {page === "sepDis" ? (
                 <p>งบประมาณประจำสำนักงานเขต</p>
               ) : (
                 <p>"งบประมาณในสำนัก:"</p>
               )}
-              
             </Menu.Item>
             <Page2 districtSelected={districtSelected} />
           </Sidebar>
