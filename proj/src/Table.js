@@ -6,22 +6,22 @@ class Table extends Component {
     super(props);
     this.state = {
       students: [
-        { id: 1, name: "Wasif", age: 21, email: "wasif@email.com" },
-        { id: 2, name: "Ali", age: 19, email: "ali@email.com" },
-        { id: 3, name: "Saad", age: 16, email: "saad@email.com" },
-        { id: 4, name: "Asad", age: 25, email: "asad@email.com" },
+        { id: 1, name: "กรุงเทพ ในฝัน", age: 21, upvote: 1300 , diff:"+10"},
+        { id: 2, name: "สายป่านยาว ใจดี", age: 19, upvote: 940 , diff:"-23"},
+        { id: 3, name: "มานพ สุดจิต", age: 16, upvote: 801,diff:"-2"},
+        { id: 4, name: "หมายปอง เก้าอี้", age: 25, upvote: 734,diff:"+0"},
       ],
     };
   }
   renderTableData() {
     return this.state.students.map((student, index) => {
-      const { id, name, age, email } = student; //destructuring
+      const { id, name, age, upvote ,diff} = student; //destructuring
       return (
         <tr key={id}>
-          <TD>{id}</TD>
           <TD>{name}</TD>
           <TD>{age}</TD>
-          <TD>{email}</TD>
+          <TD>{upvote}</TD>
+          <TD>{diff}</TD>
         </tr>
       );
     });
@@ -34,10 +34,10 @@ class Table extends Component {
         <TABLE>
           <tbody>
             <tr>
-              <TH>name</TH>
-              <TH>comment</TH>
-              <TH>upvote</TH>
-              <TH>project</TH>
+              <TH>ชื่อ</TH>
+              <TH>จำนวนกระทู้</TH>
+              <TH>จำนวนดาว</TH>
+              <TH>อันดับเพิ่ม-ลด</TH>
             </tr>
             {this.renderTableData()}
           </tbody>

@@ -1,9 +1,30 @@
 import React, { useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import HeaderExampleImage from "./HeaderProfile.js";
+import { Header, Image } from "semantic-ui-react";
 
 import "./index.css";
-function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum ,setVisibleLeaderBoard}) {
+const HeaderExampleImageNav = () => (
+  <div style = {{paddingLeft:600}}>
+    <Header color = "grey" as="h4">
+      <Image
+        size="tiny"
+        circular
+        src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
+      />{" "}
+      กรุงเทพ ในฝัน
+    </Header>
+  </div>
+);
+function Navbarmap({
+  page,
+  setPage,
+  setVisible,
+  setVisibleP2,
+  setVisibleForum,
+  setVisibleLeaderBoard,
+}) {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">
@@ -53,8 +74,8 @@ function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum ,se
           onClick={() => {
             setPage("forum");
             //setVisible(false);
-            
-            setVisibleForum((prev)=>!prev)
+
+            setVisibleForum((prev) => !prev);
           }}
         >
           กระทู้สนทนา
@@ -64,11 +85,12 @@ function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum ,se
           onClick={() => {
             setPage("leaderboard");
             //setVisible(false);
-            setVisibleLeaderBoard((prev)=>!prev);
+            setVisibleLeaderBoard((prev) => !prev);
           }}
         >
           ตารางคะแนนการมีส่วนร่วม
         </Nav.Link>
+        <HeaderExampleImageNav />
       </Nav>
     </Navbar>
   );

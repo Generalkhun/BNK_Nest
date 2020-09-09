@@ -14,11 +14,11 @@ export default function Page3() {
             <Table />
           </Paper>
         </Divspan8>
-        <Divspan4>
+        {/* <Divspan4>
           <Paper className={classes.paper}>
             <h1>Filter</h1>
           </Paper>
-        </Divspan4>
+        </Divspan4> */}
       </div>
     </div>
   );
