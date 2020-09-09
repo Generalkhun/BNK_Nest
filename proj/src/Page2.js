@@ -24,6 +24,14 @@ const districtNametoDistrict = (name) => {
   return dataObject.filter((i) => i.name.includes(name));
 };
 
+const dataToPieObject = (data) =>
+  range(10).map((i) => {
+    return {
+      label: category[i],
+      value: stringToInterger(data[`f${i + 1}_sum`]),
+    };
+  });
+
 const dataPieObject = range(10).map((i) => {
   return {
     label: category[i],
@@ -91,7 +99,14 @@ function Page2({ districtSelected }) {
         <div style={{ gridArea: "main5" }}></div>
         <div style={{ gridArea: "main6" }}></div>
         <div style={{ gridArea: "main7" }}>
-          <DonutChart data={dataPieObject} width={400} />
+          {districtNametoDistrict(districtSelected).length > 0 && (
+            <DonutChart
+              data={dataToPieObject(
+                districtNametoDistrict(districtSelected)[0]
+              )}
+              width={400}
+            />
+          )}
         </div>
       </div>
     </div>
