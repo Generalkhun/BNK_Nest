@@ -18,6 +18,7 @@ import SecondBarChart from "./SecondBarChart.js";
 import FeedExampleEventsProp from "./MockupFeed.js";
 import CommentExampleComment from "./MockupComments.js";
 import LeftSideForum from "./LeftSideForum.js";
+import Topic from "./Topic.js";
 import Page3 from "./Page3.js";
 const FirstSidebar = ({
   page,
@@ -35,6 +36,7 @@ const FirstSidebar = ({
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
+  const [Mock1, setMock1] = useState(0);
   return (
     <Grid columns={1}>
       <Grid.Column>
@@ -102,13 +104,22 @@ const FirstSidebar = ({
             visible={visibleForum}
             width="wide"
           >
-            <Menu.Item as="a" header>
+            <div style={{ height: 500, display: "flex", flexDirection: "row" }}>
+              <Menu.Item as="a" header>
+                <div>
+                  <LeftSideForum />
+                </div>
+              </Menu.Item>
               <div>
-                <LeftSideForum />
+                <Topic setMock1={setMock1} />
               </div>
-            </Menu.Item>
-            <div>
-              <CommentExampleComment />
+              {Mock1 ? (
+                <div>
+                  <CommentExampleComment />
+                </div>
+              ) : (
+                <div></div>
+              )}
             </div>
           </Sidebar>
 
