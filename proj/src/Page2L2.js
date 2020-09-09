@@ -12,7 +12,7 @@ import Option from "./Option";
 import DonutChart from "react-donut-chart";
 import * as districtShape from "./data/district/districtNew.json";
 import "./index.css";
-import AccordianPage2 from "./AccordianPage2.js";
+import AccordianPage2L2 from "./AccordianPage2L2.js";
 import DounutChartP2 from "./DounutChartP2.js";
 import data2 from "./sample2.json";
 
@@ -80,9 +80,7 @@ function Page2L2({ districtSelected, filter2 }) {
             >
               aaaaaaaa
             </button>
-            {data2Object[filter2].desc.split("&").map((c) => {
-              return <p>{c}</p>;
-            })}
+            <AccordianPage2L2 data={data2Object[filter2].desc.split("&")} />
           </div>
         </div>
       </div>
