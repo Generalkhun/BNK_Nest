@@ -30,7 +30,7 @@ class SecondBarChart extends React.Component {
           events: {
             dataPointSelection: (event, chartContext, config) => {
               //console.log(config.dataPointIndex);
-              this.props.setFilter(config.dataPointIndex + 1);
+              this.props.setFilter(config.dataPointIndex);
               console.log(this.props.filter);
             },
           },

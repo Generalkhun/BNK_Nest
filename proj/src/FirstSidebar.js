@@ -25,6 +25,7 @@ const FirstSidebar = ({
   setDistrictSelected,
 }) => {
   const [filter, setFilter] = useState(0);
+  const [filter2, setFilter2] = useState(0);
   return (
     <Grid columns={1}>
       <Grid.Column>
@@ -49,7 +50,7 @@ const FirstSidebar = ({
             {page === "sepDis" ? (
               <FirstBarChart filter={filter} setFilter={setFilter} />
             ) : (
-              <SecondBarChart filter={filter} setFilter={setFilter} />
+              <SecondBarChart filter={filter2} setFilter={setFilter2} />
             )}
           </Sidebar>
 
@@ -75,7 +76,9 @@ const FirstSidebar = ({
 
           <Sidebar.Pusher>
             <MapDistrict
+              page={page}
               filter={filter}
+              filter2={filter2}
               districtSelected={districtSelected}
               setDistrictSelected={setDistrictSelected}
               setVisibleP2={setVisibleP2}

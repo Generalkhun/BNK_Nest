@@ -35,6 +35,25 @@ const colors = [
   "#f48024",
   "#69d2e7",
 ];
+
+const colors2 = [
+  "#f9a3a4",
+  "#90ee7e",
+  "#f48024",
+  "#69d2e7",
+  "#33b2df",
+  "#546E7A",
+  "#d4526e",
+  "#13d8aa",
+  "#A5978B",
+  "#2b908f",
+  "#546E7A",
+  "#d4526e",
+  "#13d8aa",
+  "#A5978B",
+  "#2b908f",
+];
+
 const districhShapeWithValue = addValutToDistrictShape(districtShape);
 function MapDistrict({
   filter,
@@ -43,6 +62,8 @@ function MapDistrict({
   setVisibleP2,
   visibleP2,
   setVisible,
+  page,
+  filter2,
 }) {
   console.log(console.log(districhShapeWithValue));
   //let [districtSelected, setDistrictSelected] = useState("");
@@ -74,9 +95,15 @@ function MapDistrict({
             features: districhShapeWithValue.default.features,
           }}
           identity={(feature) => feature.properties.OBJECTID}
-          valueProperty={(feature) => feature.properties[`f${filter}_sum_int`]}
+          valueProperty={(feature) =>
+            page == "sepDis" ? feature.properties[`f${filter}_sum_int`] : 1
+          }
           visible={(feature) => true}
-          scale={[colors[filter], "#FFFFFF"]}
+          scale={
+            page == "sepDis"
+              ? [colors[filter], "#FFFFFF"]
+              : [colors2[filter2], "#FFFFFF"]
+          }
           steps={10}
           mode="e"
           style={style}
