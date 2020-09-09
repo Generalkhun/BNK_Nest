@@ -18,10 +18,14 @@ const dataObject = dataToJSONObject(data);
 
 const districtNametoDistrict = (name) => {
   console.log(
-    dataObject.filter((i) => i.name.includes(name)),
+    dataObject.filter((i) =>
+      i.name.replace(/[่ฏฎ]/, "").includes(name.replace(/[่ฏฎ]/, ""))
+    ),
     "&&&&"
   );
-  return dataObject.filter((i) => i.name.includes(name));
+  return dataObject.filter((i) =>
+    i.name.replace(/[่ฏฎ]/, "").includes(name.replace(/[่ฏฎ]/, ""))
+  );
 };
 
 const dataToPieObject = (data) =>
