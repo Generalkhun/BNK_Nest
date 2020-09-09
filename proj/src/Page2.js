@@ -9,12 +9,20 @@ import {
   addValutToDistrictShape,
 } from "./util";
 import Option from "./Option";
- import DonutChart from "react-donut-chart";
+import DonutChart from "react-donut-chart";
 import * as districtShape from "./data/district/districtNew.json";
 
 var _ = require("lodash");
 const index = 0;
 const dataObject = dataToJSONObject(data);
+
+const districtNametoDistrict = (name) => {
+  console.log(
+    dataObject.filter((i) => i.name.includes(name)),
+    "&&&&"
+  );
+  return dataObject.filter((i) => i.name.includes(name));
+};
 
 const dataPieObject = range(10).map((i) => {
   return {
@@ -26,17 +34,21 @@ const dataPieObject = range(10).map((i) => {
 function log() {
   const districhShapeWithValue = addValutToDistrictShape(districtShape);
   console.log(districhShapeWithValue);
-  console.log(districtShape.default.features.map((c) => c));
+  //console.log(districtShape.default.features.map((c) => c));
   console.log(dataObject);
 }
-function Page2() {
+function Page2({ districtSelected }) {
   const [filter, setFilter] = useState(1);
 
   return (
-    <div style={{ fontFamily: `'Kanit', sans-serif` ,color:"white"}}>
+    <div style={{ fontFamily: `'Kanit', sans-serif`, color: "white" }}>
       <div>
-        <h1>{dataObject[index].name}</h1>
-        <button onClick={log}>{"saraku"}</button>
+        <h1>
+          {districtNametoDistrict(districtSelected).length > 0
+            ? districtNametoDistrict(districtSelected)[0].name
+            : "null"}
+        </h1>
+
         <Option setFilter={setFilter} />
       </div>
       <div
@@ -53,24 +65,31 @@ function Page2() {
           width: 800,
         }}
       >
-        <div style={{  gridArea: "main1" }}></div>
+        <div style={{ gridArea: "main1" }}></div>
         <div style={{ gridArea: "main2", margin: "auto" }}>
           <p>งบปีปัจจุบัน</p>
-          <p>{dataObject[index][`f${filter}_sum`]} บาท</p>
+          <p>
+            {districtNametoDistrict(districtSelected).length > 0
+              ? districtNametoDistrict(districtSelected)[0][`f${filter}_sum`]
+              : 0}{" "}
+            บาท
+          </p>
         </div>
         <div style={{ gridArea: "main3" }}></div>
         <div style={{ gridArea: "main4", margin: "auto" }}>
-          {dataObject[index][`f${filter}_data_f`]
-            .replace(/_$/g, "")
-            .split("_")
-            .map((s, i) => (
-              <p>
-                {i}.{s} บาท
-              </p>
-            ))}
+          {districtNametoDistrict(districtSelected).length > 0
+            ? districtNametoDistrict(districtSelected)[0]
+                [`f${filter}_data_f`].replace(/_$/g, "")
+                .split("_")
+                .map((s, i) => (
+                  <p>
+                    {i}.{s} บาท
+                  </p>
+                ))
+            : ""}
         </div>
-        <div style={{  gridArea: "main5" }}></div>
-        <div style={{  gridArea: "main6" }}></div>
+        <div style={{ gridArea: "main5" }}></div>
+        <div style={{ gridArea: "main6" }}></div>
         <div style={{ gridArea: "main7" }}>
           <DonutChart data={dataPieObject} width={400} />
         </div>
