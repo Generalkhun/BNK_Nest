@@ -29,27 +29,18 @@ const districtNametoDistrict = (name) => {
   );
 };
 
-const dataToPieObject = (data) =>
-  range(10).map((i) => {
-    return {
-      label: category[i],
-      value: stringToInterger(data[`f${i + 1}_sum`]),
-    };
-  });
+const dataToPieObject = (data) => {
+  return data
+    .split("&")
+    .map((c) => c.split("_"))[0]
+    .map((c) => {
+      return {
+        value: c ? stringToInterger(c.split(" ")[1]) : 0,
+        label: c ? c.split(" ")[0] : "",
+      };
+    });
+};
 
-const dataPieObject = range(10).map((i) => {
-  return {
-    label: category[i],
-    value: stringToInterger(dataObject[index][`f${i + 1}_sum`]),
-  };
-});
-
-function log() {
-  const districhShapeWithValue = addValutToDistrictShape(districtShape);
-  console.log(districhShapeWithValue);
-  //console.log(districtShape.default.features.map((c) => c));
-  console.log(dataObject);
-}
 function Page2L2({ districtSelected, filter2 }) {
   const [filter, setFilter] = useState(1);
 
@@ -66,13 +57,20 @@ function Page2L2({ districtSelected, filter2 }) {
               {data2Object[filter2].sum}
               บาท
             </h2>
+          </div>{" "}
+          <DounutChartP2 data={dataToPieObject(data2Object[filter2].desc)} />
+          <div>
+            <button
+              onClick={() =>
+                console.log(dataToPieObject(data2Object[filter2].desc))
+              }
+            >
+              aaaaaaaa
+            </button>
+            {data2Object[filter2].desc.split("&").map((c) => {
+              return <p>{c}</p>;
+            })}
           </div>
-
-          {/* <div>
-            <AccordianPage2
-              data={districtNametoDistrict(districtSelected)[0]}
-            />
-          </div> */}
         </div>
       </div>
     </div>
