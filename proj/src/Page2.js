@@ -12,6 +12,8 @@ import Option from "./Option";
 import DonutChart from "react-donut-chart";
 import * as districtShape from "./data/district/districtNew.json";
 import "./index.css";
+import AccordianPage2 from "./AccordianPage2.js"
+
 var _ = require("lodash");
 const index = 0;
 const dataObject = dataToJSONObject(data);
@@ -48,6 +50,7 @@ function log() {
   console.log(districhShapeWithValue);
   //console.log(districtShape.default.features.map((c) => c));
   console.log(dataObject);
+
 }
 function Page2({ districtSelected }) {
   const [filter, setFilter] = useState(1);
@@ -111,6 +114,10 @@ function Page2({ districtSelected }) {
               width={400}
             />
           )}
+          {/* Add Accordian table to Page 2  */}
+          <AccordianPage2
+              data = {districtNametoDistrict(districtSelected)[0]}
+            />
         </div>
       </div>
     </div>
