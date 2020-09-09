@@ -3,6 +3,7 @@ import Navbarmap from "./Navbarmap.js";
 import MapDistrict from "./MapDistrict.js";
 import clsx from "clsx";
 import "./App.css";
+import "./index.css";
 import List from "@material-ui/core/List";
 import ListItemText from "@material-ui/core/ListItemText";
 import {
@@ -25,10 +26,10 @@ function App() {
 
   // set visible of sidebar state
   const [visible, setVisible] = React.useState(true);
-  const [visibleP2,setVisibleP2] = React.useState(false);
+  const [visibleP2, setVisibleP2] = React.useState(false);
 
   return (
-    <div>
+    <div style={{ fontFamily: "Anakotmai" }}>
       {/* <Page2 /> */}
       {/* <Forum /> */}
       <Navbarmap
@@ -36,20 +37,18 @@ function App() {
         setPage={setPage}
         visible={visible}
         setVisible={setVisible}
-        setVisibleP2 = {setVisibleP2}
+        setVisibleP2={setVisibleP2}
       />
       <FirstSidebar
         page={page}
         setPage={setPage}
         visible={visible}
-        visibleP2 = {visibleP2}
+        visibleP2={visibleP2}
         setVisible={setVisible}
         setVisibleP2={setVisibleP2}
         districtSelected={districtSelected}
         setDistrictSelected={setDistrictSelected}
       />
-
-      
     </div>
   );
 }
