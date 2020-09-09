@@ -7,6 +7,7 @@ import {
   category,
   fieldValue,
   addValutToDistrictShape,
+  deleteLastList,
 } from "./util";
 import Option from "./Option";
 import DonutChart from "react-donut-chart";
@@ -30,15 +31,17 @@ const districtNametoDistrict = (name) => {
 };
 
 const dataToPieObject = (data) => {
-  return data
-    .split("&")
-    .map((c) => c.split("_")[0].split(" "))
-    .map((s) => {
-      return {
-        value: s[0] != "" ? stringToInterger(s[1]) : 0,
-        label: s[0] != "" ? s[0] : "",
-      };
-    });
+  return deleteLastList(
+    data
+      .split("&")
+      .map((c) => c.split("_")[0].split(" "))
+      .map((s) => {
+        return {
+          value: s[0] != "" ? stringToInterger(s[1]) : 0,
+          label: s[0] != "" ? s[0] : "",
+        };
+      })
+  );
 };
 
 function Page2L2({ districtSelected, filter2 }) {
@@ -80,7 +83,9 @@ function Page2L2({ districtSelected, filter2 }) {
             >
               aaaaaaaa
             </button>
-            <AccordianPage2L2 data={data2Object[filter2].desc.split("&")} />
+            <AccordianPage2L2
+              data={deleteLastList(data2Object[filter2].desc.split("&"))}
+            />
           </div>
         </div>
       </div>
