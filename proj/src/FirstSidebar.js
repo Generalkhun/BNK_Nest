@@ -13,6 +13,7 @@ import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 import Page2 from "./Page2.js";
 import "./index.css";
+import SecondBarChart from "./SecondBarChart.js";
 const FirstSidebar = ({
   page,
   setPage,
@@ -50,7 +51,11 @@ const FirstSidebar = ({
                 <p>"งบที่ไม่แยกตามเขต"</p>
               )}
             </Menu.Item>
-            <FirstBarChart filter={filter} setFilter={setFilter} />
+            {page === "sepDis" ? (
+              <FirstBarChart filter={filter} setFilter={setFilter} />
+            ) : (
+              <SecondBarChart filter={filter} setFilter={setFilter} />
+            )}
           </Sidebar>
 
           <Sidebar
