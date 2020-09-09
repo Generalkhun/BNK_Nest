@@ -24,8 +24,8 @@ class DounutChartP2 extends React.Component {
         ],
         fill: {
           colors: [
-            "#33b2df",
             "#546E7A",
+            "#33b2df",
             "#d4526e",
             "#13d8aa",
             "#A5978B",
