@@ -11,7 +11,7 @@ import {
 import Option from "./Option";
 import DonutChart from "react-donut-chart";
 import * as districtShape from "./data/district/districtNew.json";
-
+import "./index.css";
 var _ = require("lodash");
 const index = 0;
 const dataObject = dataToJSONObject(data);

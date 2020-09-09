@@ -3,7 +3,7 @@ import ReactApexChart from "react-apexcharts";
 import FirstbarGraphDataCal from "./FirstbarGraphDataCal.js";
 import { category } from "./util.js";
 import { round } from "lodash";
-
+import "./index.css";
 class FirstBarChart extends React.Component {
   constructor(props) {
     super(props);
@@ -55,9 +55,14 @@ class FirstBarChart extends React.Component {
           textAnchor: "start",
           style: {
             colors: ["#fff"],
+            fontFamily: "Anakotmai",
           },
           formatter: function (val, opt) {
-            return opt.w.globals.labels[opt.dataPointIndex] + ":  " + round(val/1000000);
+            return (
+              opt.w.globals.labels[opt.dataPointIndex] +
+              ":  " +
+              round(val / 1000000)
+            );
           },
           offsetX: 0,
           dropShadow: {
@@ -85,10 +90,9 @@ class FirstBarChart extends React.Component {
           text: "แยกตามแผนงาน (ล้านบาท)",
           align: "left",
           style: {
-            color:"white"
-
-          }
-          
+            color: "white",
+            fontFamily: "Anakotmai",
+          },
         },
         tooltip: {
           theme: "dark",

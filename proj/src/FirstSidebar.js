@@ -12,7 +12,7 @@ import {
 import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 import Page2 from "./Page2.js";
-
+import "./index.css";
 const FirstSidebar = ({
   page,
   setPage,
@@ -37,18 +37,20 @@ const FirstSidebar = ({
             visible={visible}
             width="wide"
           >
-            
-            <Menu.Item as="a">
+            <Menu.Item as="a" stylestyle={{ fontFamily: "Anakotmai" }}>
               <Icon
                 name="money"
                 onClick={() => {
                   setFilter(0);
                 }}
               />
-              {page === "sepDis"? "งบที่แยกตามเขต กทม. ปี 63":"งบที่ไม่แยกตามเขต"}
+              {page === "sepDis" ? (
+                <p>"งบที่แยกตามเขต กทม. ปี 63"</p>
+              ) : (
+                <p>"งบที่ไม่แยกตามเขต"</p>
+              )}
             </Menu.Item>
             <FirstBarChart filter={filter} setFilter={setFilter} />
-            
           </Sidebar>
 
           <Sidebar

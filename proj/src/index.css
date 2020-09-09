@@ -16,3 +16,11 @@ code {
   font-family: "Anakotmai";
   src: url("./assets/anakotmai-light.woff") format("truetype");
 }
+
+p {
+  font-family: "Anakotmai";
+}
+
+h1 {
+  font-family: "Anakotmai";
+}
