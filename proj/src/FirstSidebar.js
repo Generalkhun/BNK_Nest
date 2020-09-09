@@ -15,6 +15,8 @@ import Page2 from "./Page2.js";
 import Page2L2 from "./Page2L2.js";
 import "./index.css";
 import SecondBarChart from "./SecondBarChart.js";
+import FeedExampleEventsProp from "./MockupFeed.js"
+import Page3 from "./Page3.js"
 const FirstSidebar = ({
   page,
   setPage,
@@ -25,7 +27,9 @@ const FirstSidebar = ({
   districtSelected,
   setDistrictSelected,
   setVisibleForum,
-  visibleForum
+  visibleForum,
+  visibleLeaderBoard,
+  setVisibleLeaderBoard
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
@@ -88,17 +92,36 @@ const FirstSidebar = ({
 
           <Sidebar
             as={Menu}
-            animation="slide along"
+            animation="overlay"
             direction="bottom"
-            inverted
+            
             visible={visibleForum}
-            width="very wide"
+            width="wide"
           >
           <Menu.Item as="a" header>
-              <Icon name="money" />
-              <Icon name="money" />
-              <Icon name="money" />
-            </Menu.Item>
+          <div>
+          <FeedExampleEventsProp/>
+
+          </div>
+          
+
+          </Menu.Item>
+          
+          </Sidebar>
+
+          <Sidebar
+            as={Menu}
+            animation="overlay"
+            direction="top"
+            
+            visible={visibleLeaderBoard}
+            width="thin"
+          >
+          <Menu.Item as="a" header>
+          <Page3/>
+
+          </Menu.Item>
+          
           </Sidebar>
 
           <Sidebar.Pusher>
