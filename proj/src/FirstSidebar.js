@@ -53,20 +53,20 @@ const FirstSidebar = ({
 
           <Sidebar
             as={Menu}
-            animation='overlay'
-            direction='right'
+            animation="overlay"
+            direction="right"
             inverted
             vertical
             visible={visibleP2}
             width="wide"
           >
-            <Menu.Item as='a' header>
+            <Menu.Item as="a" header>
               File Permissions
             </Menu.Item>
-            <Menu.Item as='a'>Share on Social</Menu.Item>
-            <Menu.Item as='a'>Share by E-mail</Menu.Item>
-            <Menu.Item as='a'>Edit Permissions</Menu.Item>
-            <Menu.Item as='a'>Delete Permanently</Menu.Item>
+            <Menu.Item as="a">Share on Social</Menu.Item>
+            <Menu.Item as="a">Share by E-mail</Menu.Item>
+            <Menu.Item as="a">Edit Permissions</Menu.Item>
+            <Menu.Item as="a">Delete Permanently</Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher>

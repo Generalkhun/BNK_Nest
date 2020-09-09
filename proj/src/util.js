@@ -33,7 +33,13 @@ const category = [
 
 const fieldValue = (name, obj) => {
   //obj.filter((s) => s.name.includes(name))[0];
-  return obj.filter((s) => s.name.includes(name))[0];
+  return obj.filter((s) =>
+    s.name.replace(/[่ฏฎ]/, "").includes(name.replace(/[่ฏฎ]/, ""))
+  )[0];
+};
+
+const addCleanDescToData2 = (data2) => {
+  return { ...data2, cleanDesc: data2.desc.split("&") };
 };
 
 const addValutToDistrictShape = (districtshape) => {
@@ -79,4 +85,5 @@ export {
   category,
   fieldValue,
   addValutToDistrictShape,
+  addCleanDescToData2,
 };
