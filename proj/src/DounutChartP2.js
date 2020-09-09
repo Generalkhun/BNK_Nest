@@ -6,18 +6,29 @@ class DounutChartP2 extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("This is data for pie:",props.data)
+    console.log("This is data for pie:", props.data);
     this.state = {
-      series: props.data.map(c=>c.value),
+      series: props.data.map((c) => c.value),
       options: {
-        legend:{
-            labels: {
-                colors: ["#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff"]
-            }
+        legend: {
+          labels: {
+            colors: [
+              "#fff",
+              "#fff",
+              "#fff",
+              "#fff",
+              "#fff",
+              "#fff",
+              "#fff",
+              "#fff",
+              "#fff",
+              "#fff",
+            ],
+          },
         },
-        labels: props.data.map(c=>(c.label.substring(6,28)+"...")),
+        labels: props.data.map((c) => c.label.substring(6, 28) + "..."),
         chart: {
-          type: "donut"
+          type: "donut",
         },
         responsive: [
           {
@@ -29,8 +40,19 @@ class DounutChartP2 extends React.Component {
               legend: {
                 position: "bottom",
                 labels: {
-                    colors: ["#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff"]
-                }
+                  colors: [
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                    "#fff",
+                  ],
+                },
               },
             },
           },
@@ -44,8 +66,7 @@ class DounutChartP2 extends React.Component {
       <div id="chart">
         <ReactApexChart
           options={this.state.options}
-          series={this.props.data.map(c=>c.value)}
-          
+          series={this.props.data.map((c) => c.value)}
           type="donut"
         />
       </div>

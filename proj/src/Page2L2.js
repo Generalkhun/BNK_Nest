@@ -32,11 +32,11 @@ const districtNametoDistrict = (name) => {
 const dataToPieObject = (data) => {
   return data
     .split("&")
-    .map((c) => c.split("_"))[0]
-    .map((c) => {
+    .map((c) => c.split("_")[0].split(" "))
+    .map((s) => {
       return {
-        value: c ? stringToInterger(c.split(" ")[1]) : 0,
-        label: c ? c.split(" ")[0] : "",
+        value: s[0] != "" ? stringToInterger(s[1]) : 0,
+        label: s[0] != "" ? s[0] : "",
       };
     });
 };
@@ -58,11 +58,24 @@ function Page2L2({ districtSelected, filter2 }) {
               บาท
             </h2>
           </div>{" "}
-          <DounutChartP2 data={dataToPieObject(data2Object[filter2].desc)} />
+          <DounutChartP2
+            data={dataToPieObject(data2Object[filter2].desc)}
+            L2={true}
+          />
           <div>
             <button
               onClick={() =>
-                console.log(dataToPieObject(data2Object[filter2].desc))
+                console.log(
+                  data2Object[filter2].desc
+                    .split("&")
+                    .map((c) => c.split("_")[0].split(" "))
+                    .map((s) => {
+                      return {
+                        value: s[0] != "" ? stringToInterger(s[1]) : 0,
+                        label: s[0] != "" ? s[0] : "",
+                      };
+                    })
+                )
               }
             >
               aaaaaaaa
