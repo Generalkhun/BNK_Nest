@@ -39,12 +39,7 @@ const FirstSidebar = ({
             width="wide"
           >
             <Menu.Item as="a" stylestyle={{ fontFamily: "Anakotmai" }}>
-              <Icon
-                name="money"
-                onClick={() => {
-                  setFilter(0);
-                }}
-              />
+              <Icon name="money" />
               {page === "sepDis" ? (
                 <p>"งบที่แยกตามเขต กทม. ปี 63"</p>
               ) : (
@@ -60,17 +55,21 @@ const FirstSidebar = ({
 
           <Sidebar
             as={Menu}
-            animation="overlay"
+            animation="scale down"
             direction="right"
             inverted
             vertical
             visible={visibleP2}
-            width="wide"
+            width="very wide"
           >
             <Menu.Item as="a" header>
-              File Permissions
+              <Icon name="money" />
+              {page === "sepDis" ? (
+                <p>งบประมาณประจำสำนักงานเขต</p>
+              ) : (
+                <p>"งบประมาณในสำนัก:"</p>
+              )}
             </Menu.Item>
-            <Menu.Item as="a">Share on Social</Menu.Item>
             <Page2 districtSelected={districtSelected} />
           </Sidebar>
 
