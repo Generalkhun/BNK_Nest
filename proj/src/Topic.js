@@ -12,6 +12,10 @@ const extraText =
 
 const Topic = ({ setMock1 }) => (
   <div style={{ font: "Anakotmai" }}>
+    <div style={{ marginTop: 50, paddingLeft: 30 }}>
+      <h3>POST</h3>
+    </div>
+
     <Feed onClick={() => setMock1(1)}>
       <Feed.Event
         image={image}
@@ -28,7 +32,14 @@ const Topic = ({ setMock1 }) => (
           </p>
         }
       />
-
+      <div style={{ paddingLeft: 50 }}>
+        <Label as="a" color="red" tag>
+          ทำความสะอาด
+        </Label>
+        <Label as="a" color="red" tag>
+          จตุจักร
+        </Label>
+      </div>
       <Feed.Event>
         <Feed.Label image={image} />
         <Feed.Content
@@ -41,6 +52,14 @@ const Topic = ({ setMock1 }) => (
           extraText={<p>งบอื่นเพิ่มขึ้นหมดเลย ทำไมงบการศึกษาลดลงได้คะ</p>}
         />
       </Feed.Event>
+      <div style={{ paddingLeft: 50 }}>
+        <Label as="a" color="red" tag>
+          การศึกษา
+        </Label>
+        <Label as="a" color="red" tag>
+          จตุจักร
+        </Label>
+      </div>
     </Feed>
   </div>
 );

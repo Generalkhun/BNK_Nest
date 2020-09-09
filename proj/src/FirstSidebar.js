@@ -20,6 +20,7 @@ import CommentExampleComment from "./MockupComments.js";
 import LeftSideForum from "./LeftSideForum.js";
 import Topic from "./Topic.js";
 import Page3 from "./Page3.js";
+import Page4 from "./Page4.js";
 const FirstSidebar = ({
   page,
   setPage,
@@ -132,6 +133,9 @@ const FirstSidebar = ({
           >
             <Menu.Item as="a" header>
               <Page3 />
+            </Menu.Item>
+            <Menu.Item as="a" header>
+              <Page4 />
             </Menu.Item>
           </Sidebar>
 
