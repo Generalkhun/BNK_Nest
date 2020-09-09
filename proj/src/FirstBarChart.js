@@ -2,6 +2,7 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import FirstbarGraphDataCal from "./FirstbarGraphDataCal.js";
 import { category } from "./util.js";
+import { round } from "lodash";
 
 class FirstBarChart extends React.Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class FirstBarChart extends React.Component {
             colors: ["#fff"],
           },
           formatter: function (val, opt) {
-            return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val;
+            return opt.w.globals.labels[opt.dataPointIndex] + ":  " + round(val/1000000);
           },
           offsetX: 0,
           dropShadow: {
@@ -76,13 +77,18 @@ class FirstBarChart extends React.Component {
           },
         },
         title: {
-          text: "Custom DataLabels",
+          text: "",
           align: "center",
           floating: true,
         },
         subtitle: {
-          text: "Category Names as DataLabels inside bars",
-          align: "center",
+          text: "แยกตามแผนงาน (ล้านบาท)",
+          align: "left",
+          style: {
+            color:"white"
+
+          }
+          
         },
         tooltip: {
           theme: "dark",
@@ -108,7 +114,7 @@ class FirstBarChart extends React.Component {
           options={this.state.options}
           series={this.state.series}
           type="bar"
-          height={600}
+          height={525}
         />
       </div>
     );

@@ -37,23 +37,18 @@ const FirstSidebar = ({
             visible={visible}
             width="wide"
           >
-            <FirstBarChart filter={filter} setFilter={setFilter} />
+            
             <Menu.Item as="a">
               <Icon
-                name="home"
+                name="money"
                 onClick={() => {
                   setFilter(0);
                 }}
               />
-              {page}
+              {page === "sepDis"? "งบที่แยกตามเขต กทม. ปี 63":"งบที่ไม่แยกตามเขต"}
             </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="gamepad" />
-            </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="camera" />
-              Channels
-            </Menu.Item>
+            <FirstBarChart filter={filter} setFilter={setFilter} />
+            
           </Sidebar>
 
           <Sidebar
