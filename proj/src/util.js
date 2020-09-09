@@ -103,4 +103,5 @@ export {
   fieldValue,
   addValutToDistrictShape,
   addCleanDescToData2,
+  category2,
 };
