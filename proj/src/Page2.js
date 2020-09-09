@@ -52,7 +52,7 @@ function log() {
   //console.log(districtShape.default.features.map((c) => c));
   console.log(dataObject);
 }
-function Page2({ districtSelected }) {
+function Page2({ districtSelected, setVisibleForum }) {
   const [filter, setFilter] = useState(1);
 
   return (
@@ -112,6 +112,7 @@ function Page2({ districtSelected }) {
             {/* Add Accordian table to Page 2  */}
             <AccordianPage2
               data={districtNametoDistrict(districtSelected)[0]}
+              setVisibleForum={setVisibleForum}
             />
           </div>
         </div>

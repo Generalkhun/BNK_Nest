@@ -16,8 +16,8 @@ import Page2L2 from "./Page2L2.js";
 import "./index.css";
 import SecondBarChart from "./SecondBarChart.js";
 import FeedExampleEventsProp from "./MockupFeed.js";
-import CommentExampleComment from "./MockupComments.js"
-import LeftSideForum from "./LeftSideForum.js"
+import CommentExampleComment from "./MockupComments.js";
+import LeftSideForum from "./LeftSideForum.js";
 import Page3 from "./Page3.js";
 const FirstSidebar = ({
   page,
@@ -86,7 +86,10 @@ const FirstSidebar = ({
               )}
             </Menu.Item>
             {page === "sepDis" ? (
-              <Page2 districtSelected={districtSelected} />
+              <Page2
+                districtSelected={districtSelected}
+                setVisibleForum={setVisibleForum}
+              />
             ) : (
               <Page2L2 districtSelected={districtSelected} filter2={filter2} />
             )}
@@ -101,12 +104,12 @@ const FirstSidebar = ({
           >
             <Menu.Item as="a" header>
               <div>
-              <LeftSideForum />
+                <LeftSideForum />
               </div>
             </Menu.Item>
             <div>
-                <CommentExampleComment />
-              </div>
+              <CommentExampleComment />
+            </div>
           </Sidebar>
 
           <Sidebar
