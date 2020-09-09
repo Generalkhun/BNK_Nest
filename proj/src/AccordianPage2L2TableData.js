@@ -1,12 +1,27 @@
 import React from "react";
 import { Accordion, Card, Table } from "react-bootstrap";
 import { stringToInterger } from "./util.js";
-
+const colors = [
+  "#546E7A",
+  "#33b2df",
+  "#d4526e",
+  "#13d8aa",
+  "#A5978B",
+  "#2b908f",
+  "#f9a3a4",
+  "#90ee7e",
+  "#f48024",
+  "#69d2e7",
+];
 function AccordianPage2L2TableData({ cat, data, index }) {
   return (
     <Card>
-      <Accordion.Toggle as={Card.Header} eventKey={index}>
-        {cat}
+      <Accordion.Toggle
+        as={Card.Header}
+        eventKey={index}
+        style={{ backgroundColor: colors[index] }}
+      >
+        {cat && cat.split(["_"])[0]}
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={index}>
         <Card.Body>

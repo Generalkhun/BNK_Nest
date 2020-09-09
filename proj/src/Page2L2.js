@@ -83,7 +83,9 @@ function Page2L2({ districtSelected, filter2 }) {
             >
               aaaaaaaa
             </button>
-            <AccordianPage2L2 data={data2Object[filter2].desc.split("&")} />
+            <AccordianPage2L2
+              data={deleteLastList(data2Object[filter2].desc.split("&"))}
+            />
           </div>
         </div>
       </div>
