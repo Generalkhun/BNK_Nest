@@ -51,6 +51,7 @@ const FirstSidebar = ({
               )}
             </Menu.Item>
             <FirstBarChart filter={filter} setFilter={setFilter} />
+            <button onClick ={ () => setFilter(0)}>ssss</button>
           </Sidebar>
 
           <Sidebar
