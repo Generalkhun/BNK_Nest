@@ -66,23 +66,6 @@ function Page2L2({ districtSelected, filter2 }) {
             L2={true}
           />
           <div>
-            <button
-              onClick={() =>
-                console.log(
-                  data2Object[filter2].desc
-                    .split("&")
-                    .map((c) => c.split("_")[0].split(" "))
-                    .map((s) => {
-                      return {
-                        value: s[0] != "" ? stringToInterger(s[1]) : 0,
-                        label: s[0] != "" ? s[0] : "",
-                      };
-                    })
-                )
-              }
-            >
-              aaaaaaaa
-            </button>
             <AccordianPage2L2
               data={deleteLastList(data2Object[filter2].desc.split("&"))}
             />
