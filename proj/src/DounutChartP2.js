@@ -6,7 +6,7 @@ class DounutChartP2 extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("This is data for pie:",props.data.map(c=>c.label))
+    console.log("This is data for pie:",props.data)
     this.state = {
       series: props.data.map(c=>c.value),
       options: {
@@ -44,7 +44,8 @@ class DounutChartP2 extends React.Component {
       <div id="chart">
         <ReactApexChart
           options={this.state.options}
-          series={this.state.series}
+          series={this.props.data.map(c=>c.value)}
+          
           type="donut"
         />
       </div>
