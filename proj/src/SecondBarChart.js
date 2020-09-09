@@ -1,10 +1,12 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import FirstbarGraphDataCal from "./FirstbarGraphDataCal.js";
-import { category } from "./util.js";
+import { category, dataToJSONObject } from "./util.js";
 import { round } from "lodash";
 import "./index.css";
+import data2 from "./sample2.json";
 
+const data2Object = dataToJSONObject(data2);
 class SecondBarChart extends React.Component {
   constructor(props) {
     super(props);
@@ -115,6 +117,13 @@ class SecondBarChart extends React.Component {
   render() {
     return (
       <div id="chart">
+        <button
+          onClick={() => {
+            console.log(data2Object);
+          }}
+        >
+          lg
+        </button>
         <ReactApexChart
           options={this.state.options}
           series={this.state.series}
