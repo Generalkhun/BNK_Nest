@@ -32,6 +32,10 @@ class SecondBarChart extends React.Component {
               //console.log(config.dataPointIndex);
               this.props.setFilter(config.dataPointIndex);
               console.log(this.props.filter);
+              this.props.setVisibleP2(false);
+              setTimeout(() => {
+                this.props.setVisibleP2(true);
+              }, 300);
             },
           },
         },

@@ -50,7 +50,12 @@ const FirstSidebar = ({
             {page === "sepDis" ? (
               <FirstBarChart filter={filter} setFilter={setFilter} />
             ) : (
-              <SecondBarChart filter={filter2} setFilter={setFilter2} />
+              <SecondBarChart
+                filter={filter2}
+                setFilter={setFilter2}
+                page={page}
+                setVisibleP2={setVisibleP2}
+              />
             )}
           </Sidebar>
 
