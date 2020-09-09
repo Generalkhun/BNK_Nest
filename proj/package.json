@@ -27,6 +27,7 @@
     "react-mapbox-gl": "^4.8.6",
     "react-minimal-pie-chart": "^8.0.1",
     "react-scripts": "3.4.3",
+    "reactjs-popup": "^2.0.3",
     "semantic-ui-react": "^1.2.1",
     "simple-react-donut-chart": "0.0.8",
     "styled-components": "^5.2.0"
