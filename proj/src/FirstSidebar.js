@@ -58,7 +58,7 @@ const FirstSidebar = ({
 
           <Sidebar
             as={Menu}
-            animation="scale down"
+            animation="overlay"
             direction="right"
             inverted
             vertical
@@ -78,7 +78,7 @@ const FirstSidebar = ({
 
           <Sidebar
             as={Menu}
-            animation="scale down"
+            animation="slide along"
             direction="bottom"
             inverted
             visible={visibleForum}
