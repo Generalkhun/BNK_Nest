@@ -11,7 +11,7 @@ class FirstBarChart extends React.Component {
     this.state = {
       series: [
         {
-          data: FirstbarGraphDataCal(),
+          data: FirstbarGraphDataCal().map((c) => c.value),
         },
       ],
       options: {
@@ -22,7 +22,7 @@ class FirstBarChart extends React.Component {
           type: "bar",
           events: {
             dataPointSelection: (event, chartContext, config) => {
-              //console.log(config.dataPointIndex);
+              console.log(config.dataPointIndex);
               this.props.setFilter(config.dataPointIndex + 1);
               console.log(this.props.filter);
             },
@@ -74,7 +74,7 @@ class FirstBarChart extends React.Component {
           colors: ["#fff"],
         },
         xaxis: {
-          categories: category,
+          categories: FirstbarGraphDataCal().map((c) => c.name),
         },
         yaxis: {
           labels: {
