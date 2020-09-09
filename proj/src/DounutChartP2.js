@@ -10,6 +10,11 @@ class DounutChartP2 extends React.Component {
     this.state = {
       series: props.data.map(c=>c.value),
       options: {
+        legend:{
+            labels: {
+                colors: ["#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff"]
+            }
+        },
         labels: props.data.map(c=>(c.label.substring(6,28)+"...")),
         chart: {
           type: "donut"
@@ -23,6 +28,9 @@ class DounutChartP2 extends React.Component {
               },
               legend: {
                 position: "bottom",
+                labels: {
+                    colors: ["#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff","#fff"]
+                }
               },
             },
           },
