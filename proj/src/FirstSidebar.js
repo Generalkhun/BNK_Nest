@@ -23,6 +23,8 @@ const FirstSidebar = ({
   setVisibleP2,
   districtSelected,
   setDistrictSelected,
+  setVisibleForum,
+  visibleForum
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
@@ -72,6 +74,21 @@ const FirstSidebar = ({
               )}
             </Menu.Item>
             <Page2 districtSelected={districtSelected} />
+          </Sidebar>
+
+          <Sidebar
+            as={Menu}
+            animation="scale down"
+            direction="bottom"
+            inverted
+            visible={visibleForum}
+            width="very wide"
+          >
+          <Menu.Item as="a" header>
+              <Icon name="money" />
+              <Icon name="money" />
+              <Icon name="money" />
+            </Menu.Item>
           </Sidebar>
 
           <Sidebar.Pusher>

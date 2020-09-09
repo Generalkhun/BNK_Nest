@@ -3,7 +3,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./index.css";
-function Navbarmap({ page, setPage, setVisible, setVisibleP2 }) {
+function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum }) {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">
@@ -53,11 +53,7 @@ function Navbarmap({ page, setPage, setVisible, setVisibleP2 }) {
           onClick={() => {
             setPage("forum");
             setVisible(false);
-            if (page != null) {
-              setTimeout(function () {
-                setVisible(true);
-              }, 250);
-            }
+            setVisibleForum(true);
           }}
         >
           กระทู้สนทนา

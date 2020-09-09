@@ -27,6 +27,7 @@ function App() {
   // set visible of sidebar state
   const [visible, setVisible] = React.useState(true);
   const [visibleP2, setVisibleP2] = React.useState(false);
+  const [visibleForum,setVisibleForum] = React.useState(false);
 
   return (
     <div style={{ fontFamily: "Anakotmai" }}>
@@ -38,6 +39,7 @@ function App() {
         visible={visible}
         setVisible={setVisible}
         setVisibleP2={setVisibleP2}
+        setVisibleForum = {setVisibleForum}
       />
       <FirstSidebar
         page={page}
@@ -48,6 +50,8 @@ function App() {
         setVisibleP2={setVisibleP2}
         districtSelected={districtSelected}
         setDistrictSelected={setDistrictSelected}
+        visibleForum = {visibleForum}
+        setVisibleForum = {setVisibleForum}
       />
     </div>
   );
