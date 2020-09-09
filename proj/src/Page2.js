@@ -80,7 +80,7 @@ function Page2({ districtSelected }) {
           }}
         >
           <div style={{ gridArea: "main1" }}>
-            <p>รวมงบประมานที่ได้รับปี 63</p>
+            <p>รวมงบประมาณที่ได้รับปี 63</p>
             <h2>
               {districtNametoDistrict(districtSelected).length > 0
                 ? districtNametoDistrict(districtSelected)[0][`f${filter}_sum`]
