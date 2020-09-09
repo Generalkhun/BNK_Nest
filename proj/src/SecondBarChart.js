@@ -1,11 +1,15 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 import FirstbarGraphDataCal from "./FirstbarGraphDataCal.js";
-import { category, dataToJSONObject } from "./util.js";
+import {
+  category,
+  dataToJSONObject,
+  category2,
+  stringToInterger,
+} from "./util.js";
 import { round } from "lodash";
 import "./index.css";
 import data2 from "./sample2.json";
-
 const data2Object = dataToJSONObject(data2);
 class SecondBarChart extends React.Component {
   constructor(props) {
@@ -14,7 +18,7 @@ class SecondBarChart extends React.Component {
     this.state = {
       series: [
         {
-          data: FirstbarGraphDataCal(),
+          data: data2Object.map((s) => stringToInterger(s.sum)),
         },
       ],
       options: {
@@ -26,7 +30,7 @@ class SecondBarChart extends React.Component {
           events: {
             dataPointSelection: (event, chartContext, config) => {
               //console.log(config.dataPointIndex);
-              this.props.setFilter(config.dataPointIndex + 1);
+              this.props.setFilter(config.dataPointIndex);
               console.log(this.props.filter);
             },
           },
@@ -47,6 +51,11 @@ class SecondBarChart extends React.Component {
           "#f48024",
           "#69d2e7",
           "#33b2df",
+          "#546E7A",
+          "#d4526e",
+          "#13d8aa",
+          "#A5978B",
+          "#2b908f",
           "#546E7A",
           "#d4526e",
           "#13d8aa",
@@ -77,7 +86,7 @@ class SecondBarChart extends React.Component {
           colors: ["#fff"],
         },
         xaxis: {
-          categories: category,
+          categories: category2,
         },
         yaxis: {
           labels: {
