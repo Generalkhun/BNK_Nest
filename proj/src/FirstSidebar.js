@@ -12,6 +12,7 @@ import {
 import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 import Page2 from "./Page2.js";
+import Page2L2 from "./Page2L2.js";
 import "./index.css";
 import SecondBarChart from "./SecondBarChart.js";
 const FirstSidebar = ({
@@ -52,7 +53,12 @@ const FirstSidebar = ({
             {page === "sepDis" ? (
               <FirstBarChart filter={filter} setFilter={setFilter} />
             ) : (
-              <SecondBarChart filter={filter2} setFilter={setFilter2} />
+              <SecondBarChart
+                filter={filter2}
+                setFilter={setFilter2}
+                page={page}
+                setVisibleP2={setVisibleP2}
+              />
             )}
           </Sidebar>
 
@@ -73,7 +79,11 @@ const FirstSidebar = ({
                 <p>"งบประมาณในสำนัก:"</p>
               )}
             </Menu.Item>
-            <Page2 districtSelected={districtSelected} />
+            {page === "sepDis" ? (
+              <Page2 districtSelected={districtSelected} />
+            ) : (
+              <Page2L2 districtSelected={districtSelected} filter2={filter2} />
+            )}
           </Sidebar>
 
           <Sidebar
