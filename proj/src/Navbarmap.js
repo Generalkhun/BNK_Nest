@@ -3,7 +3,7 @@ import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./index.css";
-function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum }) {
+function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum ,setVisibleLeaderBoard}) {
   return (
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">
@@ -52,11 +52,22 @@ function Navbarmap({ page, setPage, setVisible, setVisibleP2,setVisibleForum }) 
           href="#forum"
           onClick={() => {
             setPage("forum");
-            setVisible(false);
-            setVisibleForum(true);
+            //setVisible(false);
+            
+            setVisibleForum((prev)=>!prev)
           }}
         >
           กระทู้สนทนา
+        </Nav.Link>
+        <Nav.Link
+          href="#leaderboard"
+          onClick={() => {
+            setPage("leaderboard");
+            //setVisible(false);
+            setVisibleLeaderBoard((prev)=>!prev);
+          }}
+        >
+          ตารางคะแนนการมีส่วนร่วม
         </Nav.Link>
       </Nav>
     </Navbar>

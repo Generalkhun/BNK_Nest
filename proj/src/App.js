@@ -28,11 +28,11 @@ function App() {
   const [visible, setVisible] = React.useState(true);
   const [visibleP2, setVisibleP2] = React.useState(false);
   const [visibleForum,setVisibleForum] = React.useState(false);
+  const [visibleLeaderBoard,setVisibleLeaderBoard] = React.useState(false)
 
   return (
     <div style={{ fontFamily: "Anakotmai" }}>
-      {/* <Page2 /> */}
-      {/* <Forum /> */}
+
       <Navbarmap
         page={page}
         setPage={setPage}
@@ -40,6 +40,7 @@ function App() {
         setVisible={setVisible}
         setVisibleP2={setVisibleP2}
         setVisibleForum = {setVisibleForum}
+        setVisibleLeaderBoard = {setVisibleLeaderBoard}
       />
       <FirstSidebar
         page={page}
@@ -52,6 +53,8 @@ function App() {
         setDistrictSelected={setDistrictSelected}
         visibleForum = {visibleForum}
         setVisibleForum = {setVisibleForum}
+        setVisibleLeaderBoard = {setVisibleLeaderBoard}
+        visibleLeaderBoard = {visibleLeaderBoard}
       />
     </div>
   );
