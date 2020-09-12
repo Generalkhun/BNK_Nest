@@ -11,6 +11,7 @@ import {
   dataToJSONObject,
   stringToInterger,
   range,
+  groupBy,
 } from "./util";
 import data from "./sample.json";
 import Forum from "./Forum";
@@ -72,6 +73,7 @@ function App() {
       <button
         onClick={() => {
           console.log(dataForum, "!!!!!!!!!", dataComment);
+          console.log(groupBy(dataComment, "topicId"));
         }}
       >
         SSSSSSS
