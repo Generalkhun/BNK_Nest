@@ -11,7 +11,7 @@ const CommentExampleComment = (firebase) => {
     dbCon.push(
       {
         message: JSON.stringify({
-          topicId: 0,
+          topicId: "5j2chggk44a2",
           displayName: "name",
           content: text,
         }),
