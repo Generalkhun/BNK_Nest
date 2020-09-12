@@ -17,11 +17,14 @@ import Forum from "./Forum";
 import Page2 from "./Page2";
 import FirstSidebar from "./FirstSidebar.js";
 
+
+
 // import firebase from "./Firebase.js";
 
 import firebase from "firebase";
 
 function App() {
+
   let [districtSelected, setDistrictSelected] = useState("");
   const [forum, setForumOn] = useState("false");
 

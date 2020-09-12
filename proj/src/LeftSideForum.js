@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import Profile from "./Profile.js";
 import { Form, Button } from "semantic-ui-react";
+import DropdownDistrict from "./DropdownDistrict.js";
+import DropdownWorkPlan from "./DropdownWorkPlan.js";
+import DropdownNonSepDistrict from "./DropdownNonSepDistrict.js"
 
 const LeftSideForum = (firebase) => {
-  const [text, setText] = useState("");
+  const [displayName, setdisplayName] = useState("");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [tagDistrict, setTagDistrict] = useState("");
+  const [tagWorkplan, setTagWorkplan] = useState("");
+  const [tagNonSepDistrict, setTagNonSepDistrict] = useState("");
 
   const postTopic = () => {
     var dbCon = firebase.firebase.database().ref("/post");
     dbCon.push(
       {
-        message: JSON.stringify({ text: text, tag: ["เขตจตุจักร"] }),
+        message: JSON.stringify({
+          displayName: displayName,
+          title: title,
+          content: content,
+          tag: ["เขตจตุจักร"],
+        }),
       },
       () => {
-        setText("");
+        setContent("");
       }
     );
   };
@@ -24,14 +37,22 @@ const LeftSideForum = (firebase) => {
         <div style={{ paddingLeft: 1 }}>
           <p>ชื่อที่ใช้แสดงความเห็น</p>
         </div>
-        <input placeholder="ชื่อ" />
+        <input
+          value={displayName}
+          onChange={(e) => setdisplayName(e.target.value)}
+          placeholder="ชื่อ"
+        />
       </Form.Field>
 
       <Form.Field>
         <div style={{ paddingLeft: 1 }}>
           <p>หัวข้อ</p>
         </div>
-        <input placeholder="เขียนหัวข้อที่นี่..." />
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="เขียนหัวข้อที่นี่..."
+        />
       </Form.Field>
 
       <Form.Field>
@@ -40,20 +61,33 @@ const LeftSideForum = (firebase) => {
         </div>
         <Form reply>
           <Form.TextArea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          />
-          <Button
-            content="Add Reply"
-            labelPosition="left"
-            icon="edit"
-            primary
-            onClick={() => {
-              postTopic();
-            }}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
           />
         </Form>
       </Form.Field>
+      <label>เพิ่มแท็ก</label>
+      <div>
+        <DropdownDistrict setTagDistrict={setTagDistrict} />
+      </div>
+
+      <div>
+        <DropdownWorkPlan setTagWorkplan={setTagWorkplan} />
+      </div>
+
+      <div>
+        <DropdownNonSepDistrict setTagNonSepDistrict={setTagNonSepDistrict} />
+      </div>
+
+      <Button
+        content="Add Reply"
+        labelPosition="left"
+        icon="edit"
+        primary
+        onClick={() => {
+          postTopic();
+        }}
+      />
     </div>
   );
 };
