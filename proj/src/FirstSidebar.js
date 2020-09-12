@@ -115,6 +115,8 @@ const FirstSidebar = ({
             <div style={{ height: 500, display: "flex", flexDirection: "row" }}>
               <Menu.Item as="a" header>
                 <div>
+                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5" data-width=""></div>
+w
                   <LeftSideForum />
                 </div>
               </Menu.Item>
