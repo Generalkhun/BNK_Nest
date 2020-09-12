@@ -4,6 +4,9 @@ import "./index.css";
 import { Label } from "semantic-ui-react";
 import PostCard from "./PostCard.js";
 import { ToastBody } from "react-bootstrap";
+
+import { Dropdown } from "semantic-ui-react";
+
 const image = {
   src: "https://react.semantic-ui.com/images/avatar/small/matt.jpg",
 };
@@ -22,6 +25,8 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
     <div style={{ font: "Anakotmai" }}>
       <div style={{ marginTop: 50, paddingLeft: 30 }}>
         <h3>โพสทั้งหมด</h3>
+
+
       </div>
 
       {Array.isArray(dataForum) ? (
