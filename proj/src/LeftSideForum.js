@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Profile from "./Profile.js";
 import { Form, Button } from "semantic-ui-react";
 
+function LeftSideForum(firebase) {
+  const [text, setText] = useState("");
 
-function LeftSideForum() {
+  const postTopic = () => {};
+
   return (
     <div>
       <Profile />
       <Form reply>
-        <Form.TextArea />
+        <Form.TextArea onChange={(e) => setText(e.target.value)} />
         <Button content="Add Reply" labelPosition="left" icon="edit" primary />
       </Form>
     </div>

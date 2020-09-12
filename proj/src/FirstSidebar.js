@@ -35,6 +35,7 @@ const FirstSidebar = ({
   visibleForum,
   visibleLeaderBoard,
   setVisibleLeaderBoard,
+  firebase,
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
@@ -118,7 +119,7 @@ const FirstSidebar = ({
               >
                 <Menu.Item as="a" header>
                   <div>
-                    <LeftSideForum />
+                    <LeftSideForum firebase={firebase} />
                   </div>
                 </Menu.Item>
                 <div>

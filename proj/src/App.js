@@ -86,6 +86,7 @@ function App() {
         setVisibleForum={setVisibleForum}
         setVisibleLeaderBoard={setVisibleLeaderBoard}
         visibleLeaderBoard={visibleLeaderBoard}
+        firebase={firebase}
       />
     </div>
   );
