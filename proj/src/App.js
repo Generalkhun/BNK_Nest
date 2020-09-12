@@ -53,7 +53,9 @@ function App() {
     var dbCon = firebase.database().ref("/post");
     dbCon.on("value", (c) => {
       // console.log(Object.values(c.val()).map((c) => c.message));
-      setDataForum(Object.values(c.val()).map((c) => c));
+      setDataForum(
+        Object.values(c.val()).map((c) => stringJsonToJsonObj(c.message))
+      );
     });
   };
   return (

@@ -98,6 +98,7 @@ const deleteLastList = (a) => {
   a.pop();
   return a;
 };
+
 export {
   stringJsonToJsonObj,
   dataToJSONObject,
