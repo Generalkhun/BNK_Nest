@@ -70,14 +70,6 @@ function App() {
   };
   return (
     <div style={{ fontFamily: "Anakotmai" }}>
-      <button
-        onClick={() => {
-          console.log(dataForum, "!!!!!!!!!", dataComment);
-          console.log(groupBy(dataComment, "topicId"));
-        }}
-      >
-        SSSSSSS
-      </button>
       <Navbarmap
         page={page}
         setPage={setPage}
