@@ -83,7 +83,7 @@ function Page2({ districtSelected, setVisibleForum }) {
             <p>รวมงบประมาณที่ได้รับปี 63</p>
             <h2>
               {districtNametoDistrict(districtSelected).length > 0
-                ? districtNametoDistrict(districtSelected)[0][`f${filter}_sum`]
+                ? districtNametoDistrict(districtSelected)[0][`always`]
                 : 0}{" "}
               บาท
             </h2>
