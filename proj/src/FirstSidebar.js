@@ -9,7 +9,7 @@ import {
   Segment,
   Sidebar,
 } from "semantic-ui-react";
-import { Button } from 'semantic-ui-react'
+import { Button } from "semantic-ui-react";
 import MapDistrict from "./MapDistrict.js";
 import FirstBarChart from "./FirstBarChart.js";
 import Page2 from "./Page2.js";
@@ -40,7 +40,7 @@ const FirstSidebar = ({
   const [filter2, setFilter2] = useState(0);
   const [Mock1, setMock1] = useState(0);
   return (
-    <Grid columns={1}>
+    <Grid columns={1} height={"100%"}>
       <Grid.Column>
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -70,12 +70,12 @@ const FirstSidebar = ({
               />
             )}
             {page === "sepDis" ? (
-              <Button primary onClick = {() => setFilter(0)}>
+              <Button primary onClick={() => setFilter(0)}>
                 <p>{`รวม: 19064 ลบ. `}</p>
-                </Button>
-              ) : (
-                <p></p>
-              )}
+              </Button>
+            ) : (
+              <p></p>
+            )}
           </Sidebar>
 
           <Sidebar
@@ -112,23 +112,29 @@ const FirstSidebar = ({
             visible={visibleForum}
             width="wide"
           >
-            <div style={{ height: 500, display: "flex", flexDirection: "row" }}>
-              <Menu.Item as="a" header>
+            {Mock1 ? (
+              <div
+                style={{ height: 500, display: "flex", flexDirection: "row" }}
+              >
+                <Menu.Item as="a" header>
+                  <div>
+                    <LeftSideForum />
+                  </div>
+                </Menu.Item>
                 <div>
-                  <LeftSideForum />
+                  <Topic setMock1={setMock1} />
                 </div>
-              </Menu.Item>
-              <div>
-                <Topic setMock1={setMock1} />
+                {Mock1 ? (
+                  <div>
+                    <CommentExampleComment />
+                  </div>
+                ) : (
+                  <div></div>
+                )}
               </div>
-              {Mock1 ? (
-                <div>
-                  <CommentExampleComment />
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
+            ) : (
+              <div></div>
+            )}
           </Sidebar>
 
           <Sidebar
