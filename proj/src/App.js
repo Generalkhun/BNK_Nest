@@ -17,14 +17,11 @@ import Forum from "./Forum";
 import Page2 from "./Page2";
 import FirstSidebar from "./FirstSidebar.js";
 
-
-
 // import firebase from "./Firebase.js";
 
 import firebase from "firebase";
 
 function App() {
-
   let [districtSelected, setDistrictSelected] = useState("");
   const [forum, setForumOn] = useState("false");
 
@@ -37,6 +34,7 @@ function App() {
   const [visibleForum, setVisibleForum] = React.useState(false);
   const [visibleLeaderBoard, setVisibleLeaderBoard] = React.useState(false);
   const [dataForum, setDataForum] = React.useState([]);
+  const [dataComment, setDataComment] = React.useState([]);
   const firebaseConfig = {
     apiKey: "AIzaSyBfaSh4d__ZLy3RErl6Lkg8xk9Fh6G_Kno",
     authDomain: "bkknest-checkbkkworksdemo.firebaseapp.com",
@@ -54,9 +52,17 @@ function App() {
 
   const loadDataforum = () => {
     var dbCon = firebase.database().ref("/post");
+    var dbCon2 = firebase.database().ref("/comment");
     dbCon.on("value", (c) => {
       // console.log(Object.values(c.val()).map((c) => c.message));
       setDataForum(
+        Object.values(c.val()).map((c) => stringJsonToJsonObj(c.message))
+      );
+    });
+
+    dbCon2.on("value", (c) => {
+      // console.log(Object.values(c.val()).map((c) => c.message));
+      setDataComment(
         Object.values(c.val()).map((c) => stringJsonToJsonObj(c.message))
       );
     });
@@ -65,7 +71,7 @@ function App() {
     <div style={{ fontFamily: "Anakotmai" }}>
       <button
         onClick={() => {
-          console.log(dataForum, "!!!!!!!!!");
+          console.log(dataForum, "!!!!!!!!!", dataComment);
         }}
       >
         SSSSSSS
