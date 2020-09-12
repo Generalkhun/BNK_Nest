@@ -1,10 +1,27 @@
 import React, { useState } from "react";
 import { Button, Comment, Form, Header } from "semantic-ui-react";
 import { Label } from "semantic-ui-react";
-const CommentExampleComment = () => {
+const CommentExampleComment = (firebase) => {
   const [mock, setMock] = useState(0);
   const [text, setText] = useState("");
   const [text2, setText2] = useState("");
+
+  const postComment = () => {
+    var dbCon = firebase.firebase.database().ref("/comment");
+    dbCon.push(
+      {
+        message: JSON.stringify({
+          topicId: 0,
+          displayName: "name",
+          content: text,
+        }),
+      },
+      () => {
+        setText("");
+      }
+    );
+  };
+
   return (
     <div style={{ marginTop: 50 }}>
       <Comment.Group>
@@ -101,8 +118,7 @@ const CommentExampleComment = () => {
             icon="edit"
             primary
             onClick={() => {
-              setMock(1);
-              setText2(text, () => setText(""));
+              postComment();
             }}
           />
         </Form>
