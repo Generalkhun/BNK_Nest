@@ -10,7 +10,6 @@ function Profile() {
   return (
     <div>
       <HeaderExampleImage />
-      <RatingExampleStar />
     </div>
   );
 }
