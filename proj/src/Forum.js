@@ -51,6 +51,7 @@ function Forum() {
 
   return (
     <div>
+    
       {["left", "right", "top", "bottom"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
@@ -63,7 +64,9 @@ function Forum() {
           </Drawer>
         </React.Fragment>
       ))}
+
     </div>
+   
   );
 }
 
