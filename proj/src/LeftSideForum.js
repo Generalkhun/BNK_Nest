@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Profile from "./Profile.js";
 import { Form, Button } from "semantic-ui-react";
 
-function LeftSideForum(firebase) {
+const LeftSideForum = (firebase) => {
   const [text, setText] = useState("");
 
   const postTopic = () => {
@@ -11,7 +11,9 @@ function LeftSideForum(firebase) {
       {
         message: JSON.stringify({ text: text, tag: ["เขตจตุจักร"] }),
       },
-      setText("")
+      () => {
+        setText("");
+      }
     );
   };
 
@@ -19,17 +21,19 @@ function LeftSideForum(firebase) {
     <div>
       <Profile />
       <Form reply>
-        <Form.TextArea onChange={(e) => setText(e.target.value)} />
+        <Form.TextArea onChange={(e) => setText(e.target.value)} value={text} />
         <Button
           content="Add Reply"
           labelPosition="left"
           icon="edit"
           primary
-          onClick={() => postTopic()}
+          onClick={() => {
+            postTopic();
+          }}
         />
       </Form>
     </div>
   );
-}
+};
 
 export default LeftSideForum;
