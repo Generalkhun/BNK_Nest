@@ -81,6 +81,7 @@ function App() {
         loadDataforum={loadDataforum}
       />
       <FirstSidebar
+      dataForum = {dataForum}
         page={page}
         setPage={setPage}
         visible={visible}

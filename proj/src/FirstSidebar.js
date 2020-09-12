@@ -36,6 +36,7 @@ const FirstSidebar = ({
   visibleLeaderBoard,
   setVisibleLeaderBoard,
   firebase,
+  dataForum,
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
@@ -123,7 +124,11 @@ const FirstSidebar = ({
                   </div>
                 </Menu.Item>
                 <div>
-                  <Topic setMock1={setMock1} firebase={firebase} />
+                  <Topic
+                    dataForum={dataForum}
+                    setMock1={setMock1}
+                    firebase={firebase}
+                  />
                 </div>
                 {Mock1 ? (
                   <div>
