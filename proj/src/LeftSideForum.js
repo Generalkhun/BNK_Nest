@@ -3,7 +3,8 @@ import Profile from "./Profile.js";
 import { Form, Button } from "semantic-ui-react";
 import DropdownDistrict from "./DropdownDistrict.js";
 import DropdownWorkPlan from "./DropdownWorkPlan.js";
-import DropdownNonSepDistrict from "./DropdownNonSepDistrict.js"
+import DropdownNonSepDistrict from "./DropdownNonSepDistrict.js";
+import { getuuid } from "./util.js";
 
 const LeftSideForum = (firebase) => {
   const [displayName, setdisplayName] = useState("");
@@ -18,6 +19,7 @@ const LeftSideForum = (firebase) => {
     dbCon.push(
       {
         message: JSON.stringify({
+          uuid: getuuid(),
           displayName: displayName,
           title: title,
           content: content,

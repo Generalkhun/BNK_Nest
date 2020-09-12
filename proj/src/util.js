@@ -94,6 +94,10 @@ const addValutToDistrictShape = (districtshape) => {
   };
 };
 
+const getuuid = () => {
+  return Math.random().toString(26).slice(2);
+};
+
 const deleteLastList = (a) => {
   a.pop();
   return a;
@@ -110,4 +114,5 @@ export {
   addCleanDescToData2,
   category2,
   deleteLastList,
+  getuuid,
 };
