@@ -6,8 +6,8 @@ import { Header, Image } from "semantic-ui-react";
 
 import "./index.css";
 const HeaderExampleImageNav = () => (
-  <div style = {{paddingLeft:600}}>
-    <Header color = "grey" as="h4">
+  <div style={{ paddingLeft: 600 }}>
+    <Header color="grey" as="h4">
       <Image
         size="tiny"
         circular
@@ -24,6 +24,7 @@ function Navbarmap({
   setVisibleP2,
   setVisibleForum,
   setVisibleLeaderBoard,
+  loadDataforum,
 }) {
   return (
     <Navbar bg="dark" variant="dark">
@@ -74,7 +75,7 @@ function Navbarmap({
           onClick={() => {
             setPage("forum");
             //setVisible(false);
-
+            loadDataforum();
             setVisibleForum((prev) => !prev);
           }}
         >

@@ -33,7 +33,7 @@ function App() {
   const [visibleP2, setVisibleP2] = React.useState(false);
   const [visibleForum, setVisibleForum] = React.useState(false);
   const [visibleLeaderBoard, setVisibleLeaderBoard] = React.useState(false);
-
+  const [dataForum, setDataForum] = React.useState([]);
   const firebaseConfig = {
     apiKey: "AIzaSyBfaSh4d__ZLy3RErl6Lkg8xk9Fh6G_Kno",
     authDomain: "bkknest-checkbkkworksdemo.firebaseapp.com",
@@ -49,18 +49,18 @@ function App() {
     firebase.initializeApp(firebaseConfig);
   }
 
+  const loadDataforum = () => {
+    var dbCon = firebase.database().ref("/post");
+    dbCon.on("value", (c) => {
+      // console.log(Object.values(c.val()).map((c) => c.message));
+      setDataForum(Object.values(c.val()).map((c) => c));
+    });
+  };
   return (
     <div style={{ fontFamily: "Anakotmai" }}>
       <button
         onClick={() => {
-          //console.log(firebase.database, "!!!!!!!!!");
-          var dbCon = firebase.database().ref("/post");
-          // dbCon.push({
-          //   message: JSON.stringify({ name: "sakuramoyu" }),
-          // });
-          dbCon.on("value", (c) => {
-            console.log(c.val());
-          });
+          console.log(dataForum, "!!!!!!!!!");
         }}
       >
         SSSSSSS
@@ -73,6 +73,7 @@ function App() {
         setVisibleP2={setVisibleP2}
         setVisibleForum={setVisibleForum}
         setVisibleLeaderBoard={setVisibleLeaderBoard}
+        loadDataforum={loadDataforum}
       />
       <FirstSidebar
         page={page}
