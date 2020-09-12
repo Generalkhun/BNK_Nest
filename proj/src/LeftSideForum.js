@@ -21,7 +21,7 @@ const LeftSideForum = (firebase) => {
           displayName: displayName,
           title: title,
           content: content,
-          tag: ["เขตจตุจักร"],
+          tag: [tagDistrict,tagWorkplan,tagNonSepDistrict],
         }),
       },
       () => {
