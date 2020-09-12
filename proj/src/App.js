@@ -48,12 +48,13 @@ function App() {
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
   }
+
   return (
     <div style={{ fontFamily: "Anakotmai" }}>
       <button
         onClick={() => {
           //console.log(firebase.database, "!!!!!!!!!");
-          let dbCon = firebase.database().ref("/post");
+          var dbCon = firebase.database().ref("/post");
           // dbCon.push({
           //   message: JSON.stringify({ name: "sakuramoyu" }),
           // });
