@@ -28,7 +28,8 @@ function AccordianPage2L2TableData({ cat, data, index }) {
           <tbody>
             {data[index].split("_").map((c, i) => {
               return (
-                i > 0 && (
+                i > 0 &&
+                /^[ก-ฮ]/.test(c) && (
                   <tr>
                     <td>{c}</td>
                   </tr>
