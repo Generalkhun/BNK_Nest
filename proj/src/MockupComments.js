@@ -102,6 +102,7 @@ const CommentExampleComment = () => {
             primary
             onClick={() => {
               setMock(1);
+              setText2(text, () => setText(""));
             }}
           />
         </Form>

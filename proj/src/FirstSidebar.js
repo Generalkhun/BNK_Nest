@@ -112,7 +112,7 @@ const FirstSidebar = ({
             visible={visibleForum}
             width="wide"
           >
-            {Mock1 ? (
+            {true ? (
               <div
                 style={{ height: 500, display: "flex", flexDirection: "row" }}
               >
