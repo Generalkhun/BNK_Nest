@@ -123,7 +123,7 @@ const FirstSidebar = ({
                   </div>
                 </Menu.Item>
                 <div>
-                  <Topic setMock1={setMock1} />
+                  <Topic setMock1={setMock1} firebase={firebase} />
                 </div>
                 {Mock1 ? (
                   <div>
