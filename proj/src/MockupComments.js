@@ -91,6 +91,7 @@ const CommentExampleComment = () => {
 
         <Form reply>
           <Form.TextArea
+            style={{ height: 90 }}
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
