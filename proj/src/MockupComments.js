@@ -24,14 +24,13 @@ const CommentExampleComment = ({ firebase, dataComment, mock1 }) => {
 
   return (
     <div style={{ marginTop: 50 }}>
-      <button onClick={() => console.log(dataComment)}>test </button>
+      <Header as="h3" dividing>
+        Comments
+      </Header>
       {dataComment
         .filter((c) => c.topicId == mock1)
         .map((c) => (
           <div>
-            <Header as="h3" dividing>
-              Comments
-            </Header>
             <Comment>
               <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
               <Comment.Content>
