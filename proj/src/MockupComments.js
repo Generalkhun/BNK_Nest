@@ -28,23 +28,22 @@ const CommentExampleComment = ({ firebase, dataComment, mock1 }) => {
         Comments
       </Header>
       {dataComment
-        .filter((c) => c.topicId == mock1)
+        .filter((c) => c.topicId === mock1)
         .reverse()
         .map((c) => (
-          <div>
+          <div style = {{margin:20}}>
             <Comment>
-              <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
               <Comment.Content>
-                <Comment.Author as="a">Matt</Comment.Author>
+                <Comment.Author as="a"></Comment.Author>
                 <Comment.Metadata>
-                  <div>Today at 5:42PM</div>
+                  <div>Today</div>
                 </Comment.Metadata>
                 <Comment.Text>
                   {" "}
                   <p>{c.content}</p>
                 </Comment.Text>
                 <Comment.Actions>
-                  <Comment.Action>Reply</Comment.Action>
+                  <Comment.Action>Upvote</Comment.Action>
                 </Comment.Actions>
               </Comment.Content>
             </Comment>

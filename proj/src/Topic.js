@@ -64,6 +64,7 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
                 <PostCard
                   key={index}
                   date={"Today"}
+                  displayName = {aForum.displayName}
                   title={aForum.title}
                   content={aForum.content}
                   tagsDistrict={aForum.tag[0]}
