@@ -89,7 +89,7 @@ function Navbarmap({
             setVisibleLeaderBoard((prev) => !prev);
           }}
         >
-          ตารางคะแนนการมีส่วนร่วม
+          ตารางคะแนนการมีส่วนร่วม (Comming soon)
         </Nav.Link>
         <HeaderExampleImageNav />
       </Nav>

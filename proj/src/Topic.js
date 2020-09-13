@@ -5,7 +5,10 @@ import { Label } from "semantic-ui-react";
 import PostCard from "./PostCard.js";
 import { ToastBody } from "react-bootstrap";
 
-import { Dropdown } from "semantic-ui-react";
+import DropdownDistrictFilter from "./DropdownDistrictFilter.js";
+import DropdownWorkPlanFilter from "./DropdownWorkPlanFilter.js";
+import DropdownNonSepDistrictFilter from "./DropdownNonSepDistrictFilter.js";
+
 
 const image = {
   src: "https://react.semantic-ui.com/images/avatar/small/matt.jpg",
@@ -21,11 +24,28 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
   // });
   const [postCardClicked, setPostCardClicked] = useState("");
 
+
+
+  const [tagDistrictFilter,setTagDistrictFilter] = useState("")
+  const [tagWorkPlanFilter,setTagWorkPlanFilter] = useState("")
+  const [tagNonSepDistrictFilter,setTagNonSepDistrictFilter] = useState("")
+
   return (
     <div style={{ font: "Anakotmai" }}>
       <div style={{ marginTop: 50, paddingLeft: 30 }}>
         <h3>โพสทั้งหมด</h3>
+        <p>กรองจากแท็ก</p>
 
+        {/* insert filter */}
+        <DropdownDistrictFilter
+          setTagDistrictFilter = {setTagDistrictFilter}
+        />
+        <DropdownWorkPlanFilter
+          setTagWorkPlanFilter = {setTagWorkPlanFilter}
+        />
+        <DropdownNonSepDistrictFilter
+          setTagNonSepDistrictFilter = {setTagNonSepDistrictFilter}
+        />
 
       </div>
 
