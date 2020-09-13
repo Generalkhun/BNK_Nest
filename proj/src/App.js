@@ -81,7 +81,7 @@ function App() {
         loadDataforum={loadDataforum}
       />
       <FirstSidebar
-      dataForum = {dataForum}
+        dataForum={dataForum}
         page={page}
         setPage={setPage}
         visible={visible}
@@ -95,6 +95,7 @@ function App() {
         setVisibleLeaderBoard={setVisibleLeaderBoard}
         visibleLeaderBoard={visibleLeaderBoard}
         firebase={firebase}
+        dataComment={dataComment}
       />
     </div>
   );

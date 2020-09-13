@@ -37,6 +37,7 @@ const FirstSidebar = ({
   setVisibleLeaderBoard,
   firebase,
   dataForum,
+  dataComment,
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
@@ -132,7 +133,10 @@ const FirstSidebar = ({
                 </div>
                 {Mock1 ? (
                   <div>
-                    <CommentExampleComment firebase={firebase} />
+                    <CommentExampleComment
+                      firebase={firebase}
+                      dataComment={dataComment}
+                    />
                   </div>
                 ) : (
                   <div></div>

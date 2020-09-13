@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Comment, Form, Header } from "semantic-ui-react";
 import { Label } from "semantic-ui-react";
-const CommentExampleComment = (firebase) => {
+const CommentExampleComment = (firebase, dataComment) => {
   const [mock, setMock] = useState(0);
   const [text, setText] = useState("");
   const [text2, setText2] = useState("");
@@ -24,6 +24,7 @@ const CommentExampleComment = (firebase) => {
 
   return (
     <div style={{ marginTop: 50 }}>
+      <button onClick={() => console.log(dataComment)}>test </button>
       <Comment.Group>
         <Header as="h3" dividing>
           Comments

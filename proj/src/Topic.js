@@ -25,26 +25,22 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
     <div style={{ font: "Anakotmai" }}>
       <div style={{ marginTop: 50, paddingLeft: 30 }}>
         <h3>โพสทั้งหมด</h3>
-
-
       </div>
 
       {Array.isArray(dataForum) ? (
         dataForum.map((aForum, index) => (
           <Feed>
-            <PostCard
-              key={index}
-              onClick={() => {
-                setPostCardClicked(aForum.uuid)
-              }
-              } 
-              date={"Today"}
-              title={aForum.title}
-              content={aForum.content}
-              tagsDistrict={aForum.tag[0]}
-              tagsWorkPlan={aForum.tag[1]}
-              tagsNonDistrict={aForum.tag[2]}
-            />
+            <div onClick={() => setMock1(1)}>
+              <PostCard
+                key={index}
+                date={"Today"}
+                title={aForum.title}
+                content={aForum.content}
+                tagsDistrict={aForum.tag[0]}
+                tagsWorkPlan={aForum.tag[1]}
+                tagsNonDistrict={aForum.tag[2]}
+              />
+            </div>
           </Feed>
         ))
       ) : (
