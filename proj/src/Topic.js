@@ -28,7 +28,7 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
       </div>
 
       {Array.isArray(dataForum) ? (
-        dataForum.map((aForum, index) => (
+        dataForum.reverse().map((aForum, index) => (
           <Feed>
             <div onClick={() => setMock1(aForum.uuid)}>
               <PostCard

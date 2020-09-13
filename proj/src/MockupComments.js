@@ -29,6 +29,7 @@ const CommentExampleComment = ({ firebase, dataComment, mock1 }) => {
       </Header>
       {dataComment
         .filter((c) => c.topicId == mock1)
+        .reverse()
         .map((c) => (
           <div>
             <Comment>
