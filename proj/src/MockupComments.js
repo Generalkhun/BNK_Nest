@@ -23,7 +23,7 @@ const CommentExampleComment = ({ firebase, dataComment, mock1 }) => {
   };
 
   return (
-    <div style={{ marginTop: 50 }}>
+    <div style={{ marginTop: 50, height: 400, overflow: "auto", width: 500 }}>
       <Header as="h3" dividing>
         Comments
       </Header>
