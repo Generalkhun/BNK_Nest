@@ -70,7 +70,6 @@ function App() {
   };
   return (
     <div style={{ fontFamily: "Anakotmai" }}>
-      <button onClick={() => console.log(dataComment)}>test</button>
       <Navbarmap
         page={page}
         setPage={setPage}

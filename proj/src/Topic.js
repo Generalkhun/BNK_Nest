@@ -40,7 +40,7 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
       }}
     >
       <div>
-        <h3>โพสทั้งหมด</h3>
+        <h3>All posts</h3>
         <p>กรองจากแท็ก</p>
 
         {/* insert filter */}
@@ -60,13 +60,13 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
 
       {Array.isArray(dataForum) ? (
         dataForum
-          .reverse()
+          
           .filter(
             (c) =>
               c.tag[0] === tagDistrictFilter ||
               c.tag[1] === tagWorkPlanFilter ||
               c.tag[2] === tagNonSepDistrictFilter
-          )
+          ).reverse()
           .map((aForum, index) => (
             <Feed>
               <div onClick={() => setMock1(aForum.uuid)}>
