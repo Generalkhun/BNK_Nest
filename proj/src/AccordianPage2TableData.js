@@ -13,7 +13,13 @@ const colors = [
   "#f48024",
   "#69d2e7",
 ];
-function AccordianPage2TableData({ cat, data, index, setVisibleForum }) {
+function AccordianPage2TableData({
+  loadDataforum,
+  cat,
+  data,
+  index,
+  setVisibleForum,
+}) {
   return (
     <Card>
       <Accordion.Toggle
@@ -25,6 +31,7 @@ function AccordianPage2TableData({ cat, data, index, setVisibleForum }) {
         <button
           onClick={() => {
             setVisibleForum(true);
+            loadDataforum();
           }}
         >
           Report
