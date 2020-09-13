@@ -9,10 +9,13 @@ import { Label } from "semantic-ui-react";
         <div>
             <Feed.Event
           image={{src:'https://rlv.zcache.ca/swallow_silhouette_postcard-r66d3c357e5f048fb97386aab3f35e8f9_vgbaq_8byvr_307.jpg'}}
-          date={props.date}
+          //date={props.date}
+          
+
           summary={
             <p>
-              <b>{props.title}</b>
+              <b>{"โดย: "+ props.displayName}</b><br/>
+              <b>{"หัวข้อ: " + props.title}</b>
             </p>
           }
           extraText={
