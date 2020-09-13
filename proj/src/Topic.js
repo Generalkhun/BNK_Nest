@@ -30,7 +30,7 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
       {Array.isArray(dataForum) ? (
         dataForum.map((aForum, index) => (
           <Feed>
-            <div onClick={() => setMock1(1)}>
+            <div onClick={() => setMock1(aForum.uuid)}>
               <PostCard
                 key={index}
                 date={"Today"}

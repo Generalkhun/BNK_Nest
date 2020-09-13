@@ -41,7 +41,7 @@ const FirstSidebar = ({
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
-  const [Mock1, setMock1] = useState(0);
+  const [mock1, setMock1] = useState("");
   return (
     <Grid columns={1} height={"100%"}>
       <Grid.Column>
@@ -131,11 +131,12 @@ const FirstSidebar = ({
                     firebase={firebase}
                   />
                 </div>
-                {true ? (
+                {mock1 != "" ? (
                   <div>
                     <CommentExampleComment
                       firebase={firebase}
                       dataComment={dataComment}
+                      mock1={mock1}
                     />
                   </div>
                 ) : (
