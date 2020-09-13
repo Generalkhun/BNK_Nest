@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Button, Comment, Form, Header } from "semantic-ui-react";
 import { Label } from "semantic-ui-react";
-const CommentExampleComment = (firebase, dataComment) => {
+const CommentExampleComment = ({ firebase, dataComment }) => {
   const [mock, setMock] = useState(0);
   const [text, setText] = useState("");
   const [text2, setText2] = useState("");
 
   const postComment = () => {
-    var dbCon = firebase.firebase.database().ref("/comment");
+    var dbCon = firebase.database().ref("/comment");
     dbCon.push(
       {
         message: JSON.stringify({

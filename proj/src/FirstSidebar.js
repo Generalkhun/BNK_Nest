@@ -131,7 +131,7 @@ const FirstSidebar = ({
                     firebase={firebase}
                   />
                 </div>
-                {Mock1 ? (
+                {true ? (
                   <div>
                     <CommentExampleComment
                       firebase={firebase}
