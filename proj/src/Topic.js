@@ -52,19 +52,17 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
       {Array.isArray(dataForum) ? (
         dataForum.map((aForum, index) => (
           <Feed>
-            <PostCard
-              key={index}
-              onClick={() => {
-                setPostCardClicked(aForum.uuid)
-              }
-              } 
-              date={"Today"}
-              title={aForum.title}
-              content={aForum.content}
-              tagsDistrict={aForum.tag[0]}
-              tagsWorkPlan={aForum.tag[1]}
-              tagsNonDistrict={aForum.tag[2]}
-            />
+            <div onClick={() => setMock1(aForum.uuid)}>
+              <PostCard
+                key={index}
+                date={"Today"}
+                title={aForum.title}
+                content={aForum.content}
+                tagsDistrict={aForum.tag[0]}
+                tagsWorkPlan={aForum.tag[1]}
+                tagsNonDistrict={aForum.tag[2]}
+              />
+            </div>
           </Feed>
         ))
       ) : (
