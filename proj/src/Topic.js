@@ -29,8 +29,17 @@ const Topic = ({ setMock1, firebase, dataForum }) => {
   const [tagNonSepDistrictFilter, setTagNonSepDistrictFilter] = useState("");
 
   return (
-    <div style={{ font: "Anakotmai" }}>
-      <div style={{ marginTop: 50, paddingLeft: 30 }}>
+    <div
+      style={{
+        font: "Anakotmai",
+        marginTop: 50,
+        paddingLeft: 30,
+        height: 400,
+        overflow: "auto",
+        width: 500,
+      }}
+    >
+      <div>
         <h3>โพสทั้งหมด</h3>
         <p>กรองจากแท็ก</p>
 

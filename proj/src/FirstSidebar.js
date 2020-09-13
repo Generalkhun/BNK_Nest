@@ -38,6 +38,7 @@ const FirstSidebar = ({
   firebase,
   dataForum,
   dataComment,
+  loadDataforum,
 }) => {
   const [filter, setFilter] = useState(0);
   const [filter2, setFilter2] = useState(0);
@@ -100,6 +101,7 @@ const FirstSidebar = ({
             </Menu.Item>
             {page === "sepDis" ? (
               <Page2
+                loadDataforum={loadDataforum}
                 districtSelected={districtSelected}
                 setVisibleForum={setVisibleForum}
               />
